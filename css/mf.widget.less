@@ -1,0 +1,102 @@
+﻿@import "mf.mixins.less";
+
+.widget-place,
+.widget-component {
+	position: relative;
+
+	> .widget-label {
+		position: absolute;
+		top: -1.85em;
+		left: -1px;
+		display: none;
+
+		color: white;
+		background-color: @color-secondary;
+		padding: 0.3em 0.8em;
+	}
+}
+
+.widget-component {
+	> .mf-toolbar-right {
+		display: none;
+	}
+
+	&.loading {
+		padding: 1em;
+		border-color: @color-warning !important;
+
+		> .widget-label {
+			background-color: @color-warning !important;
+		}
+	}
+
+	&.error {
+		border-color: @color-error !important;
+
+		> .widget-label {
+			background-color: @color-error !important;
+		}
+	}
+
+	&.placeholder {
+		margin: 1.8em 0 0.5em !important;
+		min-height: 100px;
+		background: @drag-bg;
+		border: @drag-border !important;
+		width: 100% !important;
+	}
+}
+
+.widget-place {
+	> .widget-label {
+		background-color: @color-gray;
+		cursor: pointer;
+		.transition(@link-transition);
+			
+		&:hover {
+			background-color: darken(@color-gray, 15%);
+		}
+	}
+
+	&.admin {
+		border: dashed 1px @color-gray;
+		min-height: 50px;
+		margin-top: 1.8em;
+		padding: 0.5em;
+
+		> .widget-label {
+			display: block;
+		}
+
+		> .widget-group > .widget-component {
+			border: dashed 1px @color-secondary;
+			margin-top: 1.8em;
+			min-height: 50px;
+
+			> .widget-label, > .mf-toolbar-right {
+				display: block;
+			}
+
+			& + .widget-component {
+				margin-top: 2.3em;
+			}
+		}
+	}
+
+	&.admin + &.admin {
+		margin-top: 2.3em;
+	}
+	
+	&.active {
+		border-color: @color-success !important;
+
+		> .widget-label {
+			background-color: @color-success !important;
+		}
+	}
+}
+
+.widget-map {
+	&:extend(.pure-u-1);
+	height: 450px;	
+}

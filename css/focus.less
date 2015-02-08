@@ -1,0 +1,47 @@
+﻿@import "mf.variables.less";
+@import 'mf.less';
+
+html {
+	background-color: white;
+	padding: 2em;
+
+	@media screen and (min-width: @width-sm) {
+		padding: 4em;
+	}
+}
+
+body {
+	.center-block;
+	background: white;
+	max-width: @width-sm;
+	height: auto;
+
+	> header {
+		color: @color-secondary;
+		margin-bottom: 1em;
+		text-align: center;
+			
+		.logo {	
+			font-size: 2em;
+		}
+
+		h1 {
+			margin: 0;
+		}
+	}
+
+	> footer {
+		margin-top: 2em;
+		text-align: center;
+	}
+
+	@media screen and (min-width: @width-sm) {
+		padding: 2em;
+		.border-radius(@control-border-radius);
+		.box-shadow(0 0 50px @color-gray-light);
+
+		.header {
+			margin-bottom: 2em;
+		}
+	}
+}

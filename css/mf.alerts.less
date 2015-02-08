@@ -1,0 +1,33 @@
+﻿.mf-alert {
+	padding: 1em;
+	margin: 1em 0;
+	list-style: none;
+}
+
+.mf-alert-info {
+	&:extend(.mf-alert);
+	color: @color-secondary;
+	border: solid 1px lighten(@color-secondary, 20%);
+	background-color: lighten(@color-secondary, 35%);
+}
+
+.mf-alert-success {
+	&:extend(.mf-alert);
+	color: @color-success;
+	border: solid 1px lighten(@color-success, 20%);
+	background-color: lighten(@color-success, 40%);
+}
+
+.mf-alert-warning {
+	&:extend(.mf-alert);
+	color: @color-warning;
+	border: solid 1px lighten(@color-warning, 20%);
+	background-color: lighten(@color-warning, 40%);
+}
+
+.mf-alert-error {
+	&:extend(.mf-alert);
+	color: @color-error;
+	border: solid 1px lighten(@color-error, 20%);
+	background-color: lighten(@color-error, 40%);
+}

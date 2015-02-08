@@ -1,0 +1,165 @@
+﻿@import "mf.mixins.less";
+@import "mf.helpers.less";
+
+.mf-table-base {
+	border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #cbcbcb;
+	border: none;
+	text-align: left;
+
+	tr {
+		> td, > th {
+			margin: 0;
+			padding: 0.5em 1em;
+			overflow: visible; /* to make ths where the title is really long work*/
+		}
+
+		> th {
+			text-align: left;
+		}
+	}
+
+	> thead > tr {
+		> td, > th {
+			background-color: @table-header-bg;
+		}
+
+		> th {
+			text-align: center;
+		}
+	}
+
+	> tbody > tr {
+		> td, > th {
+			background-color: @table-row-bg;
+		}
+	}
+
+	> tfoot > tr {
+		> td, > th {
+			background-color: @table-footer-bg;
+		}
+
+		> th {
+			font-weight: bold;
+		}
+	}
+	
+	td.control {
+		width: 1px;
+		white-space: nowrap;
+		text-align: center;
+		
+		a, button {
+			&:extend(.mf-btn-link all);
+			&:extend(.mf-btn-narrow all);
+		}
+	}
+
+	tr[data-href], tr.selectable,
+	tbody[data-href], tbody.selectable {
+		.transition(@link-transition);
+
+		&.mf-hover {
+			cursor: pointer;
+			background-color: @color-gray-light;
+		}
+	}
+}
+
+.mf-table {
+	&:extend(.mf-table-base all);
+
+	> thead > tr {
+		> td, > th {
+			border-bottom: @table-border;
+		}
+	}
+
+	> tbody > tr {
+		> td, > th {
+			border-bottom: @table-border;
+		}
+
+		&:last-child {
+			> td, > th {
+				border-bottom-width: 0;
+			}
+		}
+	}
+
+	> tfoot > tr {
+		> td, > th {
+			border-top: @table-border;
+		}
+	}
+}
+
+.mf-table-tbody {
+	&:extend(.mf-table-base all);
+
+	> thead > tr {
+		> td, > th {
+			border-bottom: @table-border;
+		}
+	}
+
+	> tbody > tr:last-child {
+		> td, > th {
+			border-bottom: @table-border;
+		}
+
+		
+	}
+
+	> tbody:last-of-type > tr:last-child {
+		> td, > th {
+			border-bottom-width: 0;
+		}
+	}
+
+	> tfoot > tr {
+		> td, > th {
+			border-top: @table-border;
+		}
+	}
+}
+
+.mf-table-striped {
+	&:extend(.mf-table all);
+
+	tr:nth-child(2n-1) td {
+		background-color: @table-odd-bg;
+	}
+}
+
+table
+{
+	td.min, th.min {
+		width: 1px;
+	}
+
+	p {
+		margin: 0.5em 0;
+	}
+}
+
+.mf-level-1 {
+	padding-left: 2em !important;
+}
+
+.mf-level-2 {
+	padding-left: 4em !important;
+}
+
+.mf-table-center {
+	&:extend(.mf-table all);
+	display: block;
+	max-width: @width-lg;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1em;
+	padding-right: 1em;
+}

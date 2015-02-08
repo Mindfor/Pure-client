@@ -1,0 +1,9 @@
+../../datetimepicker/*.js
+../../jquery.inputmask/jquery.inputmask.js
+../../jquery.inputmask/jquery.inputmask.*.js
+../js/jquery.dragsort-0.5.2.js
+../js/mf.fileupload.js
+../js/mf.nestable.js
+../js/mf.admin.js
+../js/MarkdownDeep.js
+../js/MarkdownDeepEditor.js

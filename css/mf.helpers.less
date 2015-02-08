@@ -1,0 +1,155 @@
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
+}
+
+.pull-center,
+.center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.width-full {
+	width: 100%;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-old {
+	color: @color-gray;
+	text-decoration: line-through;
+}
+
+.text-help {
+	color: @color-gray;
+	font-size: 0.9em;
+
+	&.text-definition, .text-definition {
+		border-bottom-color: @color-gray;
+	}
+}
+
+.text-definition {
+	border-bottom: 1px dashed @color-text;
+	cursor: help;
+}
+
+.text-for-field {
+	display: block;
+	color: @color-gray;
+	font-size: 0.9em;
+	text-align: center;
+}
+
+.text-green {
+	color: @color-green;
+}
+
+.text-warning {
+	color: @color-warning;
+}
+
+.text-error {
+	color: @color-error;
+}
+
+.text-white {
+	color: #fff;
+}
+
+.bg-success {
+	background-color: @color-success;
+}
+
+.bg-warning {
+	background-color: @color-warning;
+}
+
+.bg-error {
+	background-color: @color-error;
+}
+
+.bg-primary {
+	background-color: @color-primary;
+}
+
+.bg-secondary {
+	background-color: @color-secondary;
+}
+
+.bg-gray {
+	background-color: @color-gray;
+}
+
+.hidden {
+	display: none;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.container-responsive {
+	max-width: 100%;
+	.center-block;
+
+	@media screen and (min-width: @width-sm) {
+		max-width: @width-sm;
+	}
+
+	@media screen and (min-width: @width-md) {
+		max-width: @width-md;
+	}
+
+	@media screen and (min-width: @width-lg) {
+		max-width: @width-lg;
+	}
+
+	@media screen and (min-width: @width-xl) {
+		max-width: @width-xl;
+	}
+}
+
+.table-row {
+	display: table-row;
+	height: 1px;
+}
+
+.table-row-expanded {
+	.table-row;
+	height: auto;
+}
+
+.img-responsive {
+	width: 100%;
+}
+
+.mf-context {
+	position: relative;
+}
+
+.mf-margin-top {
+	margin-top: 1em;
+}
+
+.mf-margin-bottom {
+	margin-bottom: 1em;
+}
+
+.mf-padding-left {
+	padding-left: 1em;
+}
