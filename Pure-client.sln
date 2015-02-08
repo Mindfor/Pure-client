@@ -3,6 +3,63 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.22512.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{18490BE4-84F7-451D-8A3A-038F3FEC834F}"
+	ProjectSection(SolutionItems) = preProject
+		css\admin.less = css\admin.less
+		css\focus.less = css\focus.less
+		css\mf.admin.panel.less = css\mf.admin.panel.less
+		css\mf.alerts.less = css\mf.alerts.less
+		css\mf.buttons.less = css\mf.buttons.less
+		css\mf.form.fileupload.less = css\mf.form.fileupload.less
+		css\mf.form.less = css\mf.form.less
+		css\mf.gallery.less = css\mf.gallery.less
+		css\mf.helpers.less = css\mf.helpers.less
+		css\mf.icons.less = css\mf.icons.less
+		css\mf.less = css\mf.less
+		css\mf.lists.less = css\mf.lists.less
+		css\mf.loading.less = css\mf.loading.less
+		css\mf.magnific.less = css\mf.magnific.less
+		css\mf.main.less = css\mf.main.less
+		css\mf.menu.less = css\mf.menu.less
+		css\mf.mixins.less = css\mf.mixins.less
+		css\mf.nestable.less = css\mf.nestable.less
+		css\mf.pager.less = css\mf.pager.less
+		css\mf.responsive-utilities.less = css\mf.responsive-utilities.less
+		css\mf.tables.less = css\mf.tables.less
+		css\mf.variables.less = css\mf.variables.less
+		css\mf.widget.less = css\mf.widget.less
+		css\pure.css = css\pure.css
+		css\pure.media.css = css\pure.media.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{4D271318-A39F-48F1-BF3D-EEF4716BB280}"
+	ProjectSection(SolutionItems) = preProject
+		js\jquery.dragsort-0.5.2.js = js\jquery.dragsort-0.5.2.js
+		js\MarkdownDeep.js = js\MarkdownDeep.js
+		js\MarkdownDeepEditor.js = js\MarkdownDeepEditor.js
+		js\mf.admin.js = js\mf.admin.js
+		js\mf.affix.js = js\mf.affix.js
+		js\mf.fileupload.js = js\mf.fileupload.js
+		js\mf.forms.js = js\mf.forms.js
+		js\mf.nestable.js = js\mf.nestable.js
+		js\mf.pure.js = js\mf.pure.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bundles", "bundles", "{E0C05A65-E8D6-4949-9EE3-862E2A9A4520}"
+	ProjectSection(SolutionItems) = preProject
+		bundles\admin.js.bundle = bundles\admin.js.bundle
+		bundles\default.js.bundle = bundles\default.js.bundle
+		bundles\frameworks.js.bundle = bundles\frameworks.js.bundle
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{84D1784D-137E-42D7-A8BC-9A5CB77DF930}"
+	ProjectSection(SolutionItems) = preProject
+		bower.json = bower.json
+	EndProjectSection
+	ProjectSection(FolderGlobals) = preProject
+		bower_1json__JSONSchema = http://json.schemastore.org/bower
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
