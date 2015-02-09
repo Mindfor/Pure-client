@@ -5,6 +5,12 @@
 	"description": "Library contains js and less files for Mindfor.Pure assembly components and views",
 	"homepage": "https://github.com/Mindfor/Pure-client",
 
+	"main": [
+		"bundles/*",
+		"css/*",
+		"js/*"
+	],
+
 	"dependencies": {
 		"fontawesome": "^4.3.0",
 		"jquery": "^2.1.3",
