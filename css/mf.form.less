@@ -1,4 +1,5 @@
 ﻿@import "mf.mixins.less";
+@import "mf.variables.less";
 
 .mf-toolbar {
 	margin-bottom: 0.5em;
@@ -78,7 +79,8 @@ textarea {
 		width: 100%;
 	}
 
-	span + input {
+	span + input,
+	button + input {
 		border-top-left-radius: 0 !important;
 		border-bottom-left-radius: 0 !important;
 	}
@@ -88,7 +90,7 @@ textarea {
 		border-bottom-right-radius: 0 !important;
 	}
 
-	span {
+	span, button {
 		display: table-cell;
 		vertical-align: middle;
 		padding: @control-padding;
@@ -99,13 +101,15 @@ textarea {
 		white-space: nowrap;
 	}
 
-	span:last-child {			
+	span:last-child,
+	button:last-child {			
 		border-left: none;			
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
 	}
 
-	span:first-child {
+	span:first-child,
+	button:first-child {
 		border-right: none;
 		border-top-right-radius: 0;
 		border-bottom-right-radius: 0;
@@ -240,7 +244,7 @@ textarea {
 		}
 
 		&:hover {
-			outline: solid 1px @color-gray-light;
+			outline: @form-row-outline;
 		}
 	}
 	
