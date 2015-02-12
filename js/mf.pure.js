@@ -290,4 +290,4 @@ mf.parseBool = function (value) {
 		}
 	}
 	return false;
-}
+};
