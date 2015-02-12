@@ -1,5 +1,5 @@
-﻿@import "mf.variables.less";
-@import 'mf.less';
+﻿@import "../css-mf/variables.less";
+@import '../css-mf/_all.less';
 
 @total-width:				80em;
 @header-height:				60px;
@@ -28,13 +28,13 @@ body {
 			max-width: @total-width;
 			.center-block;
 		}
-	
+
 		.logo {
 			display: block;
 			float: left;
 			width: @aside-content-width;
 			margin: 0 @main-padding-horizontal;
-			
+
 			color: @color-secondary;
 			font-size: 24px;
 			text-align: center;
@@ -55,7 +55,7 @@ body {
 			> * {
 				font-size: 22px;
 			}
-	
+
 			> ul {
 				margin: 0;
 				padding: 0;
@@ -82,7 +82,7 @@ body {
 
 			> ul.history {
 				display: none;
-				
+
 				&:after {
 					font-family: FontAwesome;
 					content: "\f105";
@@ -102,7 +102,7 @@ body {
 		padding: @header-height + @main-padding-vertical @main-padding-horizontal 0;
 		overflow-x: hidden;
 		overflow-y: auto;
-			
+
 		// this hack is required to make bottom padding
 		// usual "padding-bottom" does not work on IE and (they say) Firefox
 		&:after {
@@ -118,7 +118,7 @@ body {
 		height: 100%;
 		width: @aside-width;
 		background-color: @body-bg;
-		
+
 		nav {
 			&:extend(.pure-menu all);
 			&:extend(.pure-menu-open all);

@@ -1,4 +1,4 @@
-﻿@import "mf.mixins.less";
+﻿@import "mixins.less";
 
 @panel-height: 60px;
 @panel-visible: 20px;
@@ -12,7 +12,7 @@
 	margin: 0;
 	padding-bottom: @panel-visible;
 	z-index: 999998;
-	
+
 	.transition(top 0.5s);
 
 	&:hover {
@@ -22,7 +22,7 @@
 	> div {
 		background-color: @admin-bg;
 		border-bottom: @admin-border;
-		
+
 		> div {
 			.center-block;
 			max-width: @width-lg;
@@ -44,7 +44,7 @@
 
 .mf-admin-widgets {
 	display: none;
-	position: fixed; 
+	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 999999;
