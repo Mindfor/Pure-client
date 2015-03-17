@@ -72,7 +72,7 @@ window.mf = window.mf || {};
 		}
 
 		// enabled admin panel
-		$(".mf-form > .pure-controls:last-child").each(function () {
+		$("form > .controls:last-child").each(function () {
 			var panel = new mf.AdminPanel(this);
 			$(this).data("admin-panel", panel);
 		});
@@ -95,7 +95,7 @@ window.mf = window.mf || {};
 			marginVertical: 16 * 0.5, // 0.5em
 		};
 
-		var $form = this.$obj.closest(".mf-form");
+		var $form = this.$obj.closest("form");
 
 		// create panel
 		this.$panel = $("<div/>")
