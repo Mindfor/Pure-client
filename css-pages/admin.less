@@ -1,16 +1,20 @@
 ﻿@import "../css-mf/variables.less";
 @import '../css-mf/_all.less';
 
-@total-width:				80em;
-@header-height:				60px;
-@main-padding-horizontal:	15px;
-@main-padding-vertical:		30px;
-@aside-content-width:		200px;
-@aside-width:				@aside-content-width + @main-padding-horizontal * 2;
+@total-width: 80em;
+@header-height: 60px;
+@main-padding-horizontal: 15px;
+@main-padding-vertical: 30px;
+@aside-content-width: 200px;
+@aside-width: @aside-content-width + @main-padding-horizontal * 2;
 
 body {
-	.center-block;
+	.pull-center;
 	max-width: @total-width;
+
+	a {
+		text-decoration: none;
+	}
 
 	> header {
 		position: fixed;
@@ -26,7 +30,7 @@ body {
 
 		> div {
 			max-width: @total-width;
-			.center-block;
+			.pull-center;
 		}
 
 		.logo {
@@ -34,7 +38,6 @@ body {
 			float: left;
 			width: @aside-content-width;
 			margin: 0 @main-padding-horizontal;
-
 			color: @color-secondary;
 			font-size: 24px;
 			text-align: center;
@@ -70,30 +73,39 @@ body {
 					margin: 0;
 				}
 
-				li:not(:first-child):before {
-					font-family: FontAwesome;
-					content: "\f105";
-					padding: 0 10px 0 5px;
+					li:not(:first-child):before {
+						font-family: FontAwesome;
+						content: "\f105";
+						padding: 0 10px 0 5px;
+					}
+			}
+
+				> ul.main {
+					line-height: inherit;
+
+					li {
+						a {
+							text-decoration: none;
+						}
+					}
 				}
-			}
 
-			> ul.main {
-			}
+				> ul.history {
+					display: none;
 
-			> ul.history {
-				display: none;
-
-				&:after {
-					font-family: FontAwesome;
-					content: "\f105";
-					padding: 0 10px 0 5px;
-					color: @color-secondary;
+					&:after {
+						font-family: FontAwesome;
+						content: "\f105";
+						padding: 0 10px 0 5px;
+						color: @color-secondary;
+					}
 				}
-			}
 
 			> button {
-				color: @color-primary;
-				margin-right: 0.2em;
+				color: @color-primary !important;
+				background-color: transparent !important;
+				border: none !important;
+				margin-right: 0.2em !important;
 			}
 		}
 	}
@@ -102,7 +114,6 @@ body {
 		padding: @header-height + @main-padding-vertical @main-padding-horizontal 0;
 		overflow-x: hidden;
 		overflow-y: auto;
-
 		// this hack is required to make bottom padding
 		// usual "padding-bottom" does not work on IE and (they say) Firefox
 		&:after {
@@ -120,13 +131,21 @@ body {
 		background-color: @body-bg;
 
 		nav {
-			&:extend(.pure-menu all);
-			&:extend(.pure-menu-open all);
-			&:extend(.pure-menu.pure-menu-open all);
 			border: none;
 
-			header {
-				&:extend(.pure-menu .pure-menu-heading all);
+			.header {
+				display: block;
+				line-height: 1.5em;
+				padding: 5px 20px;
+				text-decoration: none;
+				white-space: nowrap;
+				color: #565d64;
+				text-transform: uppercase;
+				font-size: 90%;
+				margin-top: 0.5em;
+				border-bottom-width: 1px;
+				border-bottom-style: solid;
+				border-bottom-color: #dfdfdf;
 			}
 
 			li {
@@ -135,7 +154,6 @@ body {
 			}
 
 			.selected {
-				&:extend(.pure-menu .pure-menu-selected all);
 			}
 		}
 	}
@@ -150,3 +168,4 @@ body {
 	background-color: @admin-bg;
 	border-top: @admin-border;
 }
+

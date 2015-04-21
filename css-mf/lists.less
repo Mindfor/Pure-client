@@ -1,4 +1,7 @@
-﻿.mf-list-sort {
+﻿@import "mixins.less";
+@import "variables.less";
+
+.mf-list-sort {
 	overflow: auto;
 
 	&, ul {
@@ -8,11 +11,22 @@
 	}
 
 	li {
+		&:first-child {
+			margin-top: 0;
+		}
+
+		margin-top: 0.5em;
+
 		.name {
-			margin: 0.5em 0;
+			padding-right: @control-padding-h;
 
 			&:hover {
-				background-color: @color-gray-light;
+				border-radius: @control-border-radius;
+				background-color: @color-light;
+
+				.sort-btn {
+					background-color: transparent !important;
+				}
 			}
 		}
 
@@ -41,4 +55,18 @@
 .mf-list-nodots {
 	padding-left: 0;
 	list-style: none;
+}
+
+ul, ol {
+	&.mf-list {
+		section {
+			margin-bottom: 0.5em !important;
+
+			label {
+				&:after {
+					content: ":";
+				}
+			}
+		}
+	}
 }

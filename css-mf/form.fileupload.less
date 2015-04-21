@@ -2,7 +2,7 @@
 
 .mf-file-upload {
 	@size: 150px;
-		
+
 	input[type="file"] {
 		width: 300px;
 		display: block;
@@ -34,11 +34,9 @@
 		height: @size;
 		line-height: @size - 2px;
 		margin: 0 0.5em 0.5em 0;
-
 		text-align: center;
 		vertical-align: middle;
-
-		border: solid 1px @control-border-color;
+		border: solid 1px @color-border;
 		.border-radius(@control-border-radius);
 		background: white;
 
@@ -69,10 +67,9 @@
 	}
 
 	.file-item {
-		&:extend(.pure-form input[type="text"] all);
-		&:extend(.mf-form input[type="text"] all);
+		&:extend(input[type="text"] all);
 		display: block;
-		max-width: 400px;
+		max-width: 384px;
 		position: relative;
 		margin-bottom: 0.5em;
 

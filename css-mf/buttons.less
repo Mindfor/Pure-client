@@ -1,124 +1,47 @@
 ﻿@import "mixins.less";
+@import "variables.less";
 
-button {
-	padding: @control-padding;
-	border: none;
-	background: none;
-}
-
-.pure-button {
+.btn-mf {
+	&:extend(.btn all);
 	.border-radius(@control-border-radius);
 	.transition(@link-transition);
 	font-weight: @btn-font-weight;
-    text-decoration: none;
+	text-decoration: none;
 	display: inline-block;
+	padding: @btn-padding;
 
 	&:hover, &:focus, &:active {
 		background-image: none !important;
-		.box-shadow(none);
+		.box-shadow(none) !important;
 	}
 
 	&:active {
 		.scale(0.95);
 	}
-}
 
-.mf-btn-primary,
-.mf-btn-secondary,
-.mf-btn-success,
-.mf-btn-warning,
-.mf-btn-error,
-.mf-btn-link
-{
-	&:extend(.pure-button all);
-	padding: @btn-padding;
-}
+	&.transparent {
+		color: @link-color;
+		background-color: transparent;
+		border-color: transparent;
 
-.mf-btn-primary {
-	background-color: @btn-primary-bg;
-	color: @btn-primary-color;
-	border: @btn-primary-border;
-
-	&:hover {
-		color: @btn-primary-color;
-		background-color: @btn-primary-bg-hover;
-		border: @btn-primary-border-hover;
+		&:hover,
+		&:active {
+			background-color: fadeout(@btn-link-hover-bg, 25%) !important;
+			border-color: fadeout(@btn-link-hover-bg, 25%) !important;
+			.box-shadow(none) !important;
+		}
 	}
-}
 
-.mf-btn-secondary {
-    background-color: @btn-secondary-bg;
-	color: @btn-secondary-color;
-	border: @btn-secondary-border;
+	&.link {
+		text-decoration: none;
+		padding: 0;
+		color: @link-color;
+		background-color: transparent;
+		border-color: transparent;
 
-	&:hover {
-		color: @btn-secondary-color;
-		background-color: @btn-secondary-bg-hover;
-		border: @btn-secondary-border-hover;
+		&:hover {
+			background-color: transparent;
+			border-color: transparent;
+		}
 	}
-}
-
-.mf-btn-success {
-    background-color: @btn-success-bg;
-	color: @btn-success-color;
-	border: @btn-success-border;
-
-	&:hover {
-		color: @btn-success-color;
-		background-color: @btn-success-bg-hover;
-		border: @btn-success-border-hover;
-	}
-}
-
-.mf-btn-warning {
-    background-color: @btn-warning-bg;
-	color: @btn-warning-color;
-	border: @btn-warning-border;
-
-	&:hover {
-		color: @btn-warning-color;
-		background-color: @btn-warning-bg-hover;
-		border: @btn-warning-border-hover;
-	}
-}
-
-.mf-btn-error {
-    background-color: @btn-error-bg;
-	color: @btn-error-color;
-	border: @btn-error-border;
-
-	&:hover {
-		color: @btn-error-color;
-		background-color: @btn-error-bg-hover;
-		border: @btn-error-border-hover;
-	}
-}
-
-.mf-btn-link {
-	color: @link-color;
-	background-color: transparent;
-	
-	&:hover {
-		background-color: @btn-link-hover-bg;
-	}
-}
-
-.mf-btn-narrow {
-	padding: 0.4em 0.5em;
-}
-
-.mf-btn-xs {
-	font-size: 70%;
-}
-
-.mf-btn-sm {
-	font-size: 85%;
-}
-
-.mf-btn-lg {
-	font-size: 125%;
-}
-
-.mf-btn-xl {
-	font-size: 150%;
 }

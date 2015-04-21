@@ -1,4 +1,5 @@
 ﻿@import "mixins.less";
+@import "variables.less";
 
 /* Fade animation */
 .mfp-fade {
@@ -22,7 +23,7 @@
 		}
 
 		&.mfp-ready .mfp-content {
-		  opacity: 1;
+			opacity: 1;
 		}
 
 		&.mfp-removing .mfp-content {
@@ -36,14 +37,16 @@
 	.mfp-container, &.mfp-bg {
 		opacity: 0;
 		-webkit-backface-visibility: hidden;
-		-webkit-transition: all 0.3s ease-out; 
-		-moz-transition: all 0.3s ease-out; 
-		-o-transition: all 0.3s ease-out; 
+		-moz-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-webkit-transition: all 0.3s ease-out;
+		-moz-transition: all 0.3s ease-out;
+		-o-transition: all 0.3s ease-out;
 		transition: all 0.3s ease-out;
 	}
 
 	&.mfp-ready {
-		 .mfp-container {
+		.mfp-container {
 			opacity: 1;
 		}
 
@@ -61,12 +64,12 @@
 
 /* aligns caption to center */
 .mfp-title {
-  text-align: center;
-  padding: 6px 0;
+	text-align: center;
+	padding: 6px 0;
 }
 
 .image-source-link {
-  color: #DDD;
+	color: #DDD;
 }
 
 // default popup
@@ -76,7 +79,7 @@
 	margin: 2em auto;
 	padding: 2em;
 	background-color: white;
-	border-color: @control-border-color;
+	border-color: @color-border;
 }
 
 // popup with no margins
@@ -84,7 +87,6 @@
 	.mfp-container, img.mfp-img {
 		padding: 0;
 	}
-
 	/* position of shadow behind the image */
 	.mfp-figure:after {
 		top: 0;
@@ -92,9 +94,29 @@
 	}
 
 	.mfp-close {
+		&:extend(.btn-mf.transparent all);
+		height: 44px;
+		line-height: 44px;
+		position: absolute;
 		right: 0;
-		padding-right: 0;
-		text-align: center;
-		width: 44px;
+		top: 0;
+		text-decoration: none;
+		opacity: 0.65;
+		filter: alpha(opacity=65);
+		padding: 0 0 18px 10px;
+		color: transparent;
+		background-color: transparent;
+		font-style: normal;
+		font-size: 28px;
+		font-family: Arial, Baskerville, monospace;
+		right: -6px;
+		text-align: right;
+		padding-right: 6px;
+		width: 100%;
+
+		&:hover, &:focus {
+			background-color: transparent !important;
+			.box-shadow('none !important');
+		}
 	}
 }

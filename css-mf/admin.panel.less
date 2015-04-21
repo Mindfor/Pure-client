@@ -12,7 +12,6 @@
 	margin: 0;
 	padding-bottom: @panel-visible;
 	z-index: 999998;
-
 	.transition(top 0.5s);
 
 	&:hover {
@@ -24,7 +23,7 @@
 		border-bottom: @admin-border;
 
 		> div {
-			.center-block;
+			.pull-center;
 			max-width: @width-lg;
 			height: @panel-height - 1;
 			line-height: @panel-height - 1;
@@ -33,7 +32,7 @@
 	}
 
 	.widgets-close, .widgets-move {
-		display: none;
+		display: none !important;
 	}
 
 	.user {
@@ -51,10 +50,8 @@
 	width: @widgets-width;
 	height: 100%;
 	margin: 0;
-
 	background-color: @admin-bg;
 	border-right: @admin-border;
-
 	text-align: center;
 	padding: 1em 0.5em;
 	overflow-y: auto;

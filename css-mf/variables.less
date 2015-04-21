@@ -1,107 +1,19 @@
-﻿// main
-@body-bg:					#fff;
-@line-height:				1.2;
-
-// Typography
-@font-size:					16px;
-@font-family-base:			Tahoma, Helvetica, Arial, sans-serif;
-@font-family-monospace:		Consolas, "Courier New", monospace; // for `<code>`, `<kbd>`, and `<pre>`.
-
-// Colors
-@color-text:				black;
-@color-primary:				#105c9a;
-@color-secondary:			#56b9d9;
-@color-gray:				#565d64;
-@color-gray-light:			#eee;
-@color-success:				rgb(28, 184, 65);
-@color-warning:				rgb(223, 117, 20);
-@color-error:				rgb(202, 60, 60);
-@color-green:				#46a941;
-
-// Widths
-@width-sm:					35.5em;
-@width-md:					48em;
-@width-lg:					64em;
-@width-xl:					80em;
-
-@width-phone:				@width-sm;
-@width-tablet:				@width-md;
-@width-desktop:				@width-lg;
-
-// Links
-@link-color:				@color-primary;
-@link-hover-color:			darken(@link-color, 15%);
-@link-transition:			color 0.2s, background-color 0.2s, border-color 0.2s, transform 0.2s;
-
-// Controls
-@control-padding:			0.5em 0.6em;
-@control-border-color:		#ccc;
-@control-border-radius:		4px;
-@control-disabled-color:	#cad2d3;
-@control-disabled-bg:		#eaeded;
-@control-disabled-cursor:	not-allowed;
-@control-active-color:		#129fea;
-
-// Buttons
-@btn-font-weight:			normal;
-@btn-hover-darken:			15%;
-@btn-border:				0 solid;
-@btn-padding:				@control-padding;
-@btn-transition:			@link-transition;
-
-@btn-primary-color:			#fff;
-@btn-primary-bg:			@color-primary;
-@btn-primary-bg-hover:		darken(@btn-primary-bg, @btn-hover-darken);
-@btn-primary-border:		@btn-border darken(@btn-primary-bg, 5%);
-@btn-primary-border-hover:	@btn-border darken(@btn-primary-bg, @btn-hover-darken);
-
-@btn-secondary-color:		#fff;
-@btn-secondary-bg:			@color-secondary;
-@btn-secondary-bg-hover:	darken(@btn-secondary-bg, @btn-hover-darken);
-@btn-secondary-border:		@btn-border darken(@btn-secondary-bg, 5%);
-@btn-secondary-border-hover:@btn-border darken(@btn-secondary-bg, @btn-hover-darken);
-
-@btn-success-color:			#fff;
-@btn-success-bg:			@color-success;
-@btn-success-bg-hover:		darken(@btn-success-bg, @btn-hover-darken);
-@btn-success-border:		@btn-border darken(@btn-success-bg, 5%);
-@btn-success-border-hover:	@btn-border darken(@btn-success-bg, @btn-hover-darken);
-
-@btn-warning-color:			#fff;
-@btn-warning-bg:			@color-warning;
-@btn-warning-bg-hover:		darken(@btn-warning-bg, @btn-hover-darken);
-@btn-warning-border:		@btn-border darken(@btn-warning-bg, 5%);
-@btn-warning-border-hover:	@btn-border darken(@btn-warning-bg, @btn-hover-darken);
-
-@btn-error-color:			#fff;
-@btn-error-bg:				@color-error;
-@btn-error-bg-hover:		darken(@btn-error-bg, @btn-hover-darken);
-@btn-error-border:			@btn-border darken(@btn-error-bg, 5%);
-@btn-error-border-hover:	@btn-border darken(@btn-error-bg, @btn-hover-darken);
-
-@btn-link-hover-bg:			@color-gray-light;
-
-// Menu
-@menu-header-color:			@color-gray;
-@menu-item-color:			inherit;
-@menu-selected-color:		white;
-@menu-selected-bg:			@color-secondary;
-
-// Table
-@table-header-bg:			transparent;
-@table-row-bg:				transparent;
-@table-footer-bg:			#f2f2f2;
-@table-odd-bg:				#f2f2f2;
-@table-border:				1px solid #cbcbcb;
-
-// Form
-@form-row-outline:			solid 1px @color-gray-light;
+﻿@import "../../../../lib/fresh-css/src/variables.less";
 
 // Drag
-@drag-bg:					lighten(@color-secondary, 20%);
-@drag-border:				1px dashed @color-gray;
-@over-bg:					rgba(255, 255, 255, 0.7);
+@drag-bg: lighten(@color-secondary, 20%);
+@drag-border: 1px dashed @color-gray;
+@over-bg: rgba(255, 255, 255, 0.7);
 
 // Admin
-@admin-bg:					rgba(255, 255, 255, 0.9);
-@admin-border:				solid 1px @color-gray-light;
+@admin-bg: rgba(255, 255, 255, 0.9);
+@admin-border: solid 1px @color-light;
+
+//controls
+@control-padding: 0.5em 0.6em;
+@line-height: 1.2em;
+//@line-height: 1.5em;
+//buttons
+@btn-padding: @control-padding;
+@btn-transition: @link-transition;
+@btn-link-hover-bg: @color-light;

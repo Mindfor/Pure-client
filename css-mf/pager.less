@@ -1,4 +1,5 @@
 ﻿@import "mixins.less";
+@import "variables";
 
 ul.pager {
 	display: inline-block;
@@ -10,10 +11,9 @@ ul.pager {
 		display: block;
 		float: left;
 		overflow: auto;
-
 		margin: 0;
-		border: solid 1px @control-border-color;
-		
+		border: solid 1px @color-border;
+
 		&:first-child {
 			border-top-left-radius: @control-border-radius;
 			border-bottom-left-radius: @control-border-radius;
@@ -27,20 +27,20 @@ ul.pager {
 		&:not(:first-child) {
 			border-left: 0;
 		}
-		
+
 		> a {
 			display: block;
 			padding: 0.4em 0.8em;
 			text-decoration: none;
 
 			&:hover {
-				background-color: @color-gray-light;
+				background-color: @color-light;
 			}
 		}
 
 		&.active > a {
-			background-color: @menu-selected-bg;
-			color: @menu-selected-color;
+			background-color: @control-bg;
+			color: @control-active-color;
 		}
 
 		&.disabled > a {
@@ -63,6 +63,7 @@ ul.pager {
 	float: right;
 	white-space: nowrap;
 	margin-top: 1em;
+	height: 40px;
 
 	> * {
 		display: inline-block;
