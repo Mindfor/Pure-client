@@ -1,0 +1,28 @@
+﻿@import "variables.less";
+
+.mf-toolbar {
+	margin-bottom: 1em;
+}
+
+.mf-toolbar-bottom {
+	margin-top: 0.5em;
+}
+
+.mf-toolbar-right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: @line-height;
+
+	> a, > button {
+		padding: 0.3em 0.5em !important;
+	}
+}
+
+.mf-toolbar, .mf-toolbar-right, mf-toolbar-bottom {
+	> a, > button {
+		&:not([class^="btn-mf-"]) {
+			&:extend(.btn-mf-link all);
+		}
+	}
+}

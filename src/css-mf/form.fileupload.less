@@ -1,0 +1,92 @@
+﻿@import "mixins.less";
+
+.mf-file-upload {
+	@size: 150px;
+
+	input[type="file"] {
+		width: 300px;
+		display: block;
+		clear: both;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			display: block;
+
+			button {
+				padding: 0.3em 0.5em !important;
+			}
+		}
+	}
+
+	.template {
+		display: none !important;
+	}
+
+	.img-item {
+		float: left;
+		position: relative;
+		width: @size;
+		height: @size;
+		line-height: @size - 2px;
+		margin: 0 0.5em 0.5em 0;
+		text-align: center;
+		vertical-align: middle;
+		border: solid 1px @color-border;
+		.border-radius(@control-border-radius);
+		background: white;
+
+		> img {
+			width: 100%;
+			vertical-align: middle;
+		}
+
+		.progress {
+		}
+
+		.control {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			opacity: 0;
+			background-color: @over-bg;
+			.transition(opacity 0.3s);
+		}
+
+		&:hover .control {
+			opacity: 1;
+		}
+
+		&.drag-placeholder {
+			.box-sizing(content-box);
+		}
+	}
+
+	.file-item {
+		&:extend(input[type="text"] all);
+		display: block;
+		max-width: 384px;
+		position: relative;
+		margin-bottom: 0.5em;
+
+		> button {
+			margin: -0.3em 0;
+		}
+
+		.sort {
+		}
+
+		.delete {
+			position: absolute;
+			right: 0;
+		}
+
+		&.drag-placeholder, &[data-origstyle] {
+			.box-sizing(content-box);
+		}
+	}
+}

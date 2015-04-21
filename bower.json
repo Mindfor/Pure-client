@@ -6,16 +6,14 @@
 	"homepage": "https://github.com/Mindfor/Pure-client",
 
 	"main": [
+		"mindfor-pure-client.less",
 		"bundles/*",
-		"css-mf/*",
-		"css-pages/*",
-		"lib/*",
-		"fonts/*",
+		"src/*",
 		"js/*"
 	],
 
 	"dependencies": {
-		"fontawesome": "*",
+		"fontawesome": "^4.3.0",
 		"fresh-css": "^0.5.7",
 		"jquery": "^2.1.3",
 		"jquery-validation": "^1.13.1",

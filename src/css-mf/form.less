@@ -1,0 +1,112 @@
+﻿@import "mixins.less";
+@import "variables.less";
+
+.mf-filter {
+	margin-bottom: 0.5em;
+
+	[class|='col'] {
+		padding-right: 1em;
+	}
+
+	.mf-toolbar + & {
+		margin-top: -0.5em;
+	}
+
+	.controls {
+		padding-top: 1.45em;
+	}
+
+	.select2-container {
+		.select2-choice,
+		.select2-choices {
+			min-height: 37px;
+			width: 100%;
+		}
+	}
+
+	input {
+		margin: 0.25em 0;
+		padding: 0.5em 0.6em;
+	}
+}
+
+.select2-container {
+	display: block;
+	margin: 0.25em 0;
+
+	.select2-choice,
+	.select2-choices {
+		display: block;
+		padding: 0.5em 0.6em;
+		line-height: 1.2;
+		height: auto;
+		min-height: 37px;
+		width: 100%;
+		border: solid 1px @color-border;
+		.border-radius(@control-border-radius);
+
+		.select2-search-choice {
+			margin: 0 0.2em 0.2em 0;
+		}
+
+		.select2-search-field input {
+			padding: 0 0.2em 0.3em;
+		}
+	}
+
+	.select2-arrow {
+		padding-top: 0.25em;
+	}
+
+	&.select2-container-active {
+		.select2-choice,
+		.select2-choices {
+			border-color: @control-active-color;
+			.box-shadow(none);
+		}
+	}
+
+	&.select2-dropdown-open {
+		.select2-choice,
+		.select2-choices {
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+			border-bottom: 0;
+		}
+	}
+}
+
+.mf-value {
+	display: inline-block;
+	margin-top: 0.6em;
+	margin-bottom: 0.5em;
+}
+
+.drag-placeholder, [data-placeholder] {
+	background-color: @drag-bg !important;
+	border: @drag-border !important;
+	text-align: center;
+	color: white;
+	opacity: 0.8;
+}
+
+form {
+	section.controls {
+		.pull-right {
+			margin-left: auto;
+		}
+	}
+}
+
+.form-aligned {
+	fieldset {
+		> .row {
+			//if we have 3 column in the row - last one element must have left padding
+			> [class|="col"]:first-child:nth-last-child(3) ~ [class|="col"] {
+				&:last-child {
+					padding-left: 1em;
+				}
+			}
+		}
+	}
+}
