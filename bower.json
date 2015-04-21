@@ -8,7 +8,8 @@
 	"main": [
 		"mindfor-pure-client.less",
 		"bundles/*",
-		"src/*",
+		"css-mf/*",
+		"css-pages/*",
 		"js/*"
 	],
 
