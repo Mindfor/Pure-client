@@ -48,3 +48,36 @@
 		width: auto; /* for ie 8 */
 	}
 }
+
+.text-ellipsis(@lines-to-show, @line-height: @line-height, @font-size: @font-size-base) {
+	line-height: @line-height;
+	display: block; /* Fallback for non-webkit */
+	display: -webkit-box;
+	height: @font-size* @line-height*@lines-to-show; /* Fallback for non-webkit */
+	font-size: @font-size;
+	-webkit-line-clamp: round(@lines-to-show);
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+.title-ellipsis(){
+		-ms-text-overflow: ellipsis;
+			-o-text-overflow: ellipsis;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+}
+.filter(@value) {
+	-webkit-filter: @value;
+	filter: @value;
+}
+
+.transform(@value) {
+	-moz-transform: @value;
+	-ms-transform: @value;
+	-o-transform: @value;
+	-webkit-transform: @value;
+	transform: @value;
+}

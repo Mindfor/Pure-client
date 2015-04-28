@@ -1,4 +1,4 @@
-﻿@import "mixins.less";
+@import "mixins.less";
 
 .mf-file-upload {
 	@size: 150px;
@@ -10,15 +10,16 @@
 	}
 
 	ul {
-		margin: 0;
-		padding: 0;
-		list-style: none;
+		.blocks(3);
+		.blocks(4, @width-sm, 1em);
+		.blocks(5, @width-lg, 1em);
+		.blocks(6, @width-xl, 1em);
 
 		li {
-			display: block;
-
 			button {
-				padding: 0.3em 0.5em !important;
+				padding: 0.5em 0.55em !important;
+				margin: 1px;
+				line-height: 0;
 			}
 		}
 	}
@@ -28,37 +29,56 @@
 	}
 
 	.img-item {
-		float: left;
 		position: relative;
-		width: @size;
-		height: @size;
+		min-width: @size;
+		min-height: @size;
 		line-height: @size - 2px;
-		margin: 0 0.5em 0.5em 0;
 		text-align: center;
+		overflow: hidden;
 		vertical-align: middle;
 		border: solid 1px @color-border;
 		.border-radius(@control-border-radius);
 		background: white;
 
+		> a > img,
 		> img {
 			width: 100%;
 			vertical-align: middle;
 		}
 
 		.progress {
+			.buttons{
+				&:hover{
+					opacity: 0 !important;
+				}
+			}
 		}
 
-		.control {
+		.buttons {
 			position: absolute;
 			top: 0;
-			width: 100%;
 			opacity: 0;
-			background-color: @over-bg;
-			.transition(opacity 0.3s);
-		}
+			display:none;
+			height: 100%;
+			width: 100%;
+			background-color: fadein(@color-transparent-black, 20%);
+			.transition(opacity @transition-duration);
 
-		&:hover .control {
-			opacity: 1;
+			&:hover {
+				opacity: 1;
+			}
+
+			button {
+				color: white;
+
+				> i {
+					color: white;
+				}
+
+				&:hover {
+					border-color: white;
+				}
+			}
 		}
 
 		&.drag-placeholder {
@@ -68,11 +88,12 @@
 
 	.file-item {
 		&:extend(input[type="text"] all);
-		display: block;
-		max-width: 384px;
-		position: relative;
-		margin-bottom: 0.5em;
-
+		padding-right: 2em;
+		min-width: 250px;
+		.title-ellipsis();
+		> a{
+			
+		}
 		> button {
 			margin: -0.3em 0;
 		}

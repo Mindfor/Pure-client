@@ -1,4 +1,4 @@
-﻿@import "mixins.less";
+@import "mixins.less";
 @import "variables.less";
 
 .btn-mf {
@@ -29,6 +29,10 @@
 			background-color: fadeout(@btn-link-hover-bg, 25%) !important;
 			border-color: fadeout(@btn-link-hover-bg, 25%) !important;
 			.box-shadow(none) !important;
+		}
+		
+		&.outline {
+			background: none !important;
 		}
 	}
 

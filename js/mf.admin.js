@@ -1,4 +1,4 @@
-﻿// create namespace
+// create namespace
 window.mf = window.mf || {};
 
 (function ($) {
@@ -72,6 +72,7 @@ window.mf = window.mf || {};
 		}
 
 		// enabled admin panel
+		$("form > .controls:last-child").addClass("sticked");
 		$("form > .controls:last-child").each(function () {
 			var panel = new mf.AdminPanel(this);
 			$(this).data("admin-panel", panel);

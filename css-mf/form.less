@@ -1,4 +1,4 @@
-﻿@import "mixins.less";
+@import "mixins.less";
 @import "variables.less";
 
 .mf-filter {
@@ -94,6 +94,11 @@ form {
 	section.controls {
 		.pull-right {
 			margin-left: auto;
+		}
+	}
+	> .controls:last-child{
+		&.sticked{
+			margin-bottom: 0;
 		}
 	}
 }
