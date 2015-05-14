@@ -6,7 +6,7 @@
 	"homepage": "https://github.com/Mindfor/Pure-client",
 
 	"main": [
-		"mindfor-pure-client.less",
+		"pure.less",
 		"bundles/*",
 		"css-mf/*",
 		"css-pages/*",
