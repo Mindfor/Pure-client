@@ -24,9 +24,12 @@
 		}
 	}
 
-	input {
-		margin: 0.25em 0;
-		padding: 0.5em 0.6em;
+	> label,
+	> section {
+		input {
+			margin: 0.25em 0;
+			padding: 0.5em 0.6em;
+		}
 	}
 }
 
@@ -78,8 +81,10 @@
 
 .mf-value {
 	display: inline-block;
-	margin-top: 0.6em;
-	margin-bottom: 0.5em;
+	padding-top: @control-padding-v;
+	padding-bottom: @control-padding-v;
+	border-top: @control-border-width solid transparent;
+	border-bottom: @control-border-width solid transparent;
 }
 
 .drag-placeholder, [data-placeholder] {
