@@ -1,16 +1,13 @@
 {
-  "name": "mindfor-pure",
-  "version": "0.0.0",
-  "devDependencies": {
-    "chai": "^1.10.0",
-    "del": "*",
-    "gulp": "^3.8.11",
-    "mocha": "^2.1.0"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "dependencies": {
-    "gulp": "^3.8.11"
-  }
+	"name": "mindfor-pure",
+	"version": "0.0.0",
+	"devDependencies": {
+		"gulp": "^3.8.11",
+		"gulp-less": "^3.0.3",
+		"chai": "^1.10.0",
+		"mocha": "^2.1.0"
+	},
+	"scripts": {
+		"test": "mocha"
+	}
 }

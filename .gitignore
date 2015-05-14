@@ -1,15 +1,11 @@
 # User-specific files
 *.suo
 *.user
-*.userosscache
-*.sln.docstates
 
-# Build results
-[Bb]in/
-[Oo]bj/
-
-# Roslyn cache directories
-*.ide/
+# IDE directories
+*.ide
+.vs
+artifacts
 
 # OS X temporary files
 .DS_Store
@@ -17,20 +13,14 @@
 ._*
 
 # Packages
-packages/
-node_modules/
-bower_components/
-lib/
+packages
+node_modules
+bower_components
+lib
 
 # Others
 *.[Cc]ache
-ClientBin/
 [Ss]tyle[Cc]op.*
 ~$*
 *~
-*.dbmdl
-*.dbproj.schemaview
-*.pfx
-*.publishsettings
-debugSettings.json
-artifacts/
+.temp
