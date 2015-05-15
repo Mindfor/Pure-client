@@ -1,5 +1,8 @@
 @import '../pure.less';
 
+@header-border-width: 3px;
+@header-border: 3px solid @color-light;
+
 html {
 	background-color: white;
 	padding: 2em;
@@ -16,18 +19,19 @@ body {
 	height: auto;
 
 	> header {
-		//color: @color-secondary;
 		border-bottom: @header-border;
 		margin-bottom: 1em;
-		padding-bottom: 0.8em;
+		padding-bottom: 1em;
 		text-align: center;
-		/*.logo {
+		
+		.logo {
 			font-size: 2em;
+			color: @color-secondary;
 		}
 
 		h1 {
-			margin: 0;
-		}*/
+			margin: .4em 0 0;
+		}
 	}
 
 	> footer {
@@ -37,8 +41,8 @@ body {
 
 	@media screen and (min-width: @width-sm) {
 		padding: 2em;
-		.border-radius(@control-border-radius);
-		.box-shadow(0 0 50px @color-light);
+		border-radius: @control-border-radius;
+		box-shadow: 0 0 50px @color-light;
 
 		.header {
 			margin-bottom: 2em;

@@ -1,64 +1,10 @@
-﻿@import "mixins.less";
-@import "variables";
+﻿@import "imports";
 
-ul.pager {
-	display: inline-block;
-	list-style: none;
-	padding: 0;
-	margin-top: 1em;
-
-	> li {
-		display: block;
-		float: left;
-		overflow: auto;
-		margin: 0;
-		border: solid 1px @color-border;
-
-		&:first-child {
-			border-top-left-radius: @control-border-radius;
-			border-bottom-left-radius: @control-border-radius;
-		}
-
-		&:last-child {
-			border-top-right-radius: @control-border-radius;
-			border-bottom-right-radius: @control-border-radius;
-		}
-
-		&:not(:first-child) {
-			border-left: 0;
-		}
-
-		> a {
-			display: block;
-			padding: 0.4em 0.8em;
-			text-decoration: none;
-
-			&:hover {
-				background-color: @color-light;
-			}
-		}
-
-		&.active > a {
-			background-color: @control-bg;
-			color: @control-active-color;
-		}
-
-		&.disabled > a {
-			color: @control-disabled-color;
-			cursor: @control-disabled-cursor;
-
-			&:hover {
-				background-color: inherit;
-			}
-		}
-	}
-}
-
-.pager-wrapper {
+.page-wrapper {
 	overflow: auto;
 }
 
-.pagesize {
+.page-size {
 	display: block;
 	float: right;
 	white-space: nowrap;

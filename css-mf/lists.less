@@ -1,5 +1,4 @@
-﻿@import "mixins.less";
-@import "variables.less";
+﻿@import "imports";
 
 .mf-list-sort {
 	overflow: auto;
@@ -11,11 +10,11 @@
 	}
 
 	li {
+		margin-top: 0.5em;
+		
 		&:first-child {
 			margin-top: 0;
 		}
-
-		margin-top: 0.5em;
 
 		.name {
 			padding-right: @control-padding-h;
@@ -55,18 +54,4 @@
 .mf-list-nodots {
 	padding-left: 0;
 	list-style: none;
-}
-
-ul, ol {
-	&.mf-list {
-		section {
-			margin-bottom: 0.5em !important;
-
-			label {
-				&:after {
-					content: ":";
-				}
-			}
-		}
-	}
 }

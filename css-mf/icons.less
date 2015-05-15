@@ -1,4 +1,6 @@
-﻿// необходимо, чтобы не дублировать стиль "fa" при использовании Font Awesome
+﻿@import "imports";
+
+// необходимо, чтобы не дублировать стиль "fa" при использовании Font Awesome
 [class^="fa-"] {
 	&:extend(.fa all);
 }
@@ -17,10 +19,4 @@
 
 .fa-trophy {
 	color: goldenrod;
-}
-
-[class^="btn-mf-"] {
-	.fa-trophy {
-		color: @color-secondary;
-	}
 }

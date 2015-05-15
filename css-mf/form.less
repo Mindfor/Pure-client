@@ -1,5 +1,4 @@
-@import "mixins.less";
-@import "variables.less";
+@import "imports";
 
 .mf-filter {
 	margin-bottom: 0.5em;
@@ -28,9 +27,35 @@
 	> section {
 		input {
 			margin: 0.25em 0;
-			padding: 0.5em 0.6em;
 		}
 	}
+}
+
+.mf-toolbar {
+	margin-bottom: 1em;
+}
+
+.mf-toolbar-bottom {
+	margin-top: 0.5em;
+}
+
+.mf-toolbar-right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: @line-height;
+}
+
+.validation-summary-valid,
+.validation-summary-errors {
+	> ul {
+		margin-bottom: 0;
+	}
+}
+
+.validation-summary-errors {
+	&:extend(.alert all);
+	&:extend(.alert.error all);
 }
 
 .select2-container {
@@ -46,7 +71,7 @@
 		min-height: 37px;
 		width: 100%;
 		border: solid 1px @color-border;
-		.border-radius(@control-border-radius);
+		border-radius: @control-border-radius;
 
 		.select2-search-choice {
 			margin: 0 0.2em 0.2em 0;
@@ -65,7 +90,7 @@
 		.select2-choice,
 		.select2-choices {
 			border-color: @control-active-color;
-			.box-shadow(none);
+			box-shadow: none;
 		}
 	}
 
@@ -79,14 +104,6 @@
 	}
 }
 
-.mf-value {
-	display: inline-block;
-	padding-top: @control-padding-v;
-	padding-bottom: @control-padding-v;
-	border-top: @control-border-width solid transparent;
-	border-bottom: @control-border-width solid transparent;
-}
-
 .drag-placeholder, [data-placeholder] {
 	background-color: @drag-bg !important;
 	border: @drag-border !important;
@@ -95,28 +112,6 @@
 	opacity: 0.8;
 }
 
-form {
-	section.controls {
-		.pull-right {
-			margin-left: auto;
-		}
-	}
-	> .controls{
-		&.sticked{
-			margin-bottom: 0;
-		}
-	}
-}
-
-.form-aligned {
-	fieldset {
-		> .row {
-			//if we have 3 column in the row - last one element must have left padding
-			> [class|="col"]:first-child:nth-last-child(3) ~ [class|="col"] {
-				&:last-child {
-					padding-left: 1em;
-				}
-			}
-		}
-	}
+.form > .controls.sticked {	
+	margin-bottom: 0;
 }

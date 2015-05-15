@@ -1,5 +1,4 @@
-﻿@import "mixins.less";
-@import "variables.less";
+﻿@import "imports";
 
 /* Fade animation */
 .mfp-fade {
@@ -116,7 +115,7 @@
 
 		&:hover, &:focus {
 			background-color: transparent !important;
-			.box-shadow('none !important');
+			box-shadow: none !important;
 		}
 	}
 }

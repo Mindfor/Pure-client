@@ -1,4 +1,4 @@
-@import "mixins.less";
+@import "imports";
 
 .mf-file-upload {
 	@size: 150px;
@@ -37,7 +37,7 @@
 		overflow: hidden;
 		vertical-align: middle;
 		border: solid 1px @color-border;
-		.border-radius(@control-border-radius);
+		border-radius: @control-border-radius;
 		background: white;
 
 		> a > img,
@@ -61,7 +61,7 @@
 			display:none;
 			height: 100%;
 			width: 100%;
-			background-color: fadein(@color-transparent-black, 20%);
+			background-color: fade(black, 50%);
 			.transition(opacity @transition-duration);
 
 			&:hover {
@@ -82,7 +82,7 @@
 		}
 
 		&.drag-placeholder {
-			.box-sizing(content-box);
+			box-sizing: content-box;
 		}
 	}
 
@@ -90,10 +90,9 @@
 		&:extend(input[type="text"] all);
 		padding-right: 2em;
 		min-width: 250px;
-		.title-ellipsis();
-		> a{
-			
-		}
+		overflow: hidden;
+		text-overflow: ellipsis;
+		
 		> button {
 			margin: -0.3em 0;
 		}
@@ -107,7 +106,7 @@
 		}
 
 		&.drag-placeholder, &[data-origstyle] {
-			.box-sizing(content-box);
+			box-sizing: content-box;
 		}
 	}
 }
