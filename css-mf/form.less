@@ -115,3 +115,33 @@
 .form > .controls.sticked {	
 	margin-bottom: 0;
 }
+
+.mf-page-size {
+	display: block;
+	float: right;
+	
+	white-space: nowrap;
+	margin-bottom: @line-height;
+	
+	> label:after {
+		content: ":";
+	}
+}
+
+ul.mf-legend {
+	display: block;
+	margin: 0;
+	text-align: center;
+
+	> li {
+		display: inline-block;
+		padding: 0 .5em;
+
+		> span {
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			vertical-align: -(@line-height - 1em) / 2;
+		}
+	}
+}
