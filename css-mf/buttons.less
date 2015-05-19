@@ -4,3 +4,51 @@
 	&:extend(.btn-link all);
 	padding: @btn-icon-padding;
 }
+
+.btn-transparent {
+	&:extend(.btn-base all);
+	text-decoration: none;
+	color: white;
+	border-color: transparent;
+	background-color: transparent;
+
+	&:hover {
+		border-color: white;
+	}
+
+	&.primary {
+		.btn-transparent-color(@color-primary);
+	}
+
+	&.secondary {
+		.btn-transparent-color(@color-secondary);
+	}
+
+	&.success {
+		.btn-transparent-color(@color-success);
+	}
+
+	&.warning {
+		.btn-transparent-color(@color-warning);
+	}
+
+	&.error {
+		.btn-transparent-color(@color-error);
+	}
+}
+
+.btn-transparent-color(@color) {
+	color: @color;
+
+	&:hover {
+		border-color: @color;
+	}
+}
+
+.btn-semi-black {
+	background-color: fade(black, 40%);
+
+	&:hover {
+		background-color: fade(black, 40%);
+	}
+}
