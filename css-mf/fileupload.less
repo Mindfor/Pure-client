@@ -17,9 +17,9 @@
 
 		li {
 			button {
-				padding: 0.5em 0.55em !important;
+			    padding: @control-padding-v !important;
 				margin: 1px;
-				line-height: 0;
+				line-height: 1;
 			}
 		}
 	}
@@ -88,20 +88,21 @@
 
 	.file-item {
 		&:extend(input[type="text"] all);
-		padding-right: 2em;
+		padding: @control-padding-v 2em;
 		min-width: 250px;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		
 		> button {
-			margin: -0.3em 0;
+			position: absolute;
+			.pull-middle();
 		}
 
 		.sort {
+			  left: 0;
 		}
 
 		.delete {
-			position: absolute;
 			right: 0;
 		}
 
