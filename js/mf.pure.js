@@ -233,26 +233,7 @@ window.mf = window.mf || {};
 	};
 
 	Number.prototype.toMoney = function () {
-		var str = this.toLocaleString(getHtmlLocale(), { maximumFractionDigits: 2 });
-		var index = str.lastIndexOf(".");
-		if (index == -1)
-			index = str.lastIndexOf(",");
-
-		var first = true;
-		var result = "";
-		if (index >= 0) {
-			result = str.substr(index);
-			str = str.substr(0, index);
-		}
-
-		while (str.length > 0) {
-			var num = Math.min(str.length, 3);
-			index = str.length - num;
-			result = str.substr(index, num) + (first ? "" : " ") + result;
-			str = str.substr(0, index);
-		}
-
-		return result;
+		return this.toLocaleString(getHtmlLocale(), { maximumFractionDigits: 2 });
 	};
 
 	function getHtmlLocale() {
