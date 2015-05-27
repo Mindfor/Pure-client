@@ -58,52 +58,6 @@
 	&:extend(.alert.error all);
 }
 
-.select2-container {
-	display: block;
-	margin: 0.25em 0;
-
-	.select2-choice,
-	.select2-choices {
-		display: block;
-		padding: 0.5em 0.6em;
-		line-height: 1.2;
-		height: auto;
-		min-height: 37px;
-		width: 100%;
-		border: solid 1px @color-border;
-		border-radius: @control-border-radius;
-
-		.select2-search-choice {
-			margin: 0 0.2em 0.2em 0;
-		}
-
-		.select2-search-field input {
-			padding: 0 0.2em 0.3em;
-		}
-	}
-
-	.select2-arrow {
-		padding-top: 0.25em;
-	}
-
-	&.select2-container-active {
-		.select2-choice,
-		.select2-choices {
-			border-color: @control-active-color;
-			box-shadow: none;
-		}
-	}
-
-	&.select2-dropdown-open {
-		.select2-choice,
-		.select2-choices {
-			border-bottom-left-radius: 0;
-			border-bottom-right-radius: 0;
-			border-bottom: 0;
-		}
-	}
-}
-
 .drag-placeholder, [data-placeholder] {
 	background-color: @drag-bg !important;
 	border: @drag-border !important;
