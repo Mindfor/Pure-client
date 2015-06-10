@@ -11,8 +11,8 @@ window.mf = window.mf || {};
 		}
 		
 		// set timezone
-		var tz = new Date().getTimezoneOffset();
-		document.cookie = "TimeZone=" + (-tz);
+		var tzMinutes = new Date().getTimezoneOffset();
+		document.cookie = "TimeZone=" + (-tzMinutes / 60);
 
 		// globalize - set culture
 		var culture = $("html").attr("lang");
