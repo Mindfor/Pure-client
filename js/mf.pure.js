@@ -9,6 +9,10 @@ window.mf = window.mf || {};
 		if ($.blockUI && $.blockUI.defaults) {
 			$.blockUI.defaults.message = "Загрузка...";
 		}
+		
+		// set timezone
+		var tz = new Date().getTimezoneOffset();
+		document.cookie = "TimeZone=" + (-tz);
 
 		// globalize - set culture
 		var culture = $("html").attr("lang");
