@@ -5,12 +5,10 @@
 			var form = this;
 			var $form = $(form);
 			if (!$form.valid || $form.valid()) {
-				e.preventDefault();
-				form.submit();
-				setTimeout(function () { // for Chrome
+				setTimeout(function () {
 					$form.find("[type='submit']").prop("disabled", true);
 				}, 500);
 			}
 		});
-	})
+	});
 })(jQuery);
