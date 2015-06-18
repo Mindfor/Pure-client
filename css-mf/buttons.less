@@ -8,39 +8,39 @@
 .btn-transparent {
 	&:extend(.btn-base all);
 	text-decoration: none;
-	color: white;
+	color: black;
 	border-color: transparent;
 	background-color: transparent;
 
 	&:hover {
-		border-color: white;
+		border-color: black;
 	}
 
-	&.primary {
-		.btn-transparent-color(@color-primary);
-	}
+	.btn-transparent-fn(invert, @color-invert);
+	.btn-transparent-fn(primary, @color-primary);
+	.btn-transparent-fn(secondary, @color-secondary);
+	.btn-transparent-fn(success, @color-success);
+	.btn-transparent-fn(warning, @color-warning);
+	.btn-transparent-fn(error, @color-error);
+}
 
-	&.secondary {
-		.btn-transparent-color(@color-secondary);
-	}
+.btn-transparent-fn(@color-theme, @color) {
+	&.@{color-theme} {
+		.btn-transparent-hover-color(@color);
 
-	&.success {
-		.btn-transparent-color(@color-success);
-	}
-
-	&.warning {
-		.btn-transparent-color(@color-warning);
-	}
-
-	&.error {
-		.btn-transparent-color(@color-error);
+		&.full {
+			.btn-transparent-color(@color);
+		}
 	}
 }
 
 .btn-transparent-color(@color) {
 	color: @color;
+}
 
+.btn-transparent-hover-color(@color) {
 	&:hover {
+		color: @color;
 		border-color: @color;
 	}
 }
