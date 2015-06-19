@@ -1,4 +1,4 @@
-﻿@import "imports";
+@import "imports";
 
 /* Fade animation */
 .mfp-fade {
@@ -72,6 +72,7 @@
 }
 
 // default popup
+.mfp-container.mfp-ajax-holder .mfp-content,
 .mf-popup {
 	position: relative;
 	max-width: @width-lg;
@@ -79,6 +80,7 @@
 	padding: 2em;
 	background-color: white;
 	border-color: @color-border;
+    border-radius: @control-border-radius;
 }
 
 // popup with no margins
