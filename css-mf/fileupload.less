@@ -35,7 +35,7 @@
 	}
 
 	.upload,
-	.img-item {
+	.item {
 		position: relative;
 		min-width: @size;
 		min-height: @size;
@@ -97,31 +97,31 @@
 		}
 	}
 
+	// TODO: styles for .view-list
+	// .file-item {
+	// 	&:extend(input[type="text"] all);
+	// 	padding: @control-padding-v 2em;
+	// 	min-width: 250px;
+	// 	overflow: hidden;
+	// 	text-overflow: ellipsis;
 
-	.file-item {
-		&:extend(input[type="text"] all);
-		padding: @control-padding-v 2em;
-		min-width: 250px;
-		overflow: hidden;
-		text-overflow: ellipsis;
+	// 	> button {
+	// 		position: absolute;
+	// 		.pull-middle();
+	// 	}
 
-		> button {
-			position: absolute;
-			.pull-middle();
-		}
+	// 	.sort {
+	// 		left: 0;
+	// 	}
 
-		.sort {
-			left: 0;
-		}
+	// 	.delete {
+	// 		right: 0;
+	// 	}
 
-		.delete {
-			right: 0;
-		}
-
-		&.drag-placeholder, &[data-origstyle] {
-			box-sizing: content-box;
-		}
-	}
+	// 	&.drag-placeholder, &[data-origstyle] {
+	// 		box-sizing: content-box;
+	// 	}
+	// }
 
 	.upload {
 		border-color: transparent;
