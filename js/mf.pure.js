@@ -271,6 +271,27 @@ window.mf = window.mf || {};
 		if (htmls.length > 0)
 			return htmls[0].getAttribute("lang");
 		return null;
+	};
+    
+    $.fn.setActive = function () {
+		this.siblings().removeClass("active");
+		this.addClass("active");
+	}
+    
+    /*
+	 * The method filters jquery objects by some name of data property in params prop, 
+	 * if val params is present then filtration happens by value of the data property 
+	 */
+	$.fn.filterByData = function (prop, val) {
+		return this.filter(function () {
+				var valOfData = $(this).data(prop);
+				if (val) 
+					return valOfData == val;
+				if (valOfData)
+					return true;
+				return false;
+			}
+		);
 	}
 })(jQuery);
 
