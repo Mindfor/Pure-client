@@ -99,3 +99,21 @@ ul.mf-legend {
 		}
 	}
 }
+
+.xdsoft_datetimepicker {
+	box-shadow: @box-shadow;
+	.transition(opacity @transition-duration @transition-fn);
+	opacity: 0;
+
+	&.active {
+		opacity: 1;
+	}
+
+	&.time {
+		padding: 0;
+
+		> .xdsoft_timepicker {
+			margin: 6px 8px;
+		}
+	}
+}

@@ -1,4 +1,4 @@
-﻿// create namespace
+// create namespace
 window.mf = window.mf || {};
 
 /* --- jQuery extensions --- */
@@ -47,32 +47,58 @@ window.mf = window.mf || {};
 		// data-format
 		if ($.fn.datetimepicker) {
 			$("input[data-format]").each(function () {
-				var $this = $(this);
-				var format = $this.data("format");
-				if (format == "datetime") {
-					$this.datetimepicker({
-						scrollInput: false,
-						scrollMonth: false,
-						format: "d.m.Y H:i",
-						lang: culture
-					});
+				var $dataformatInput = $(this);
+				var format = $dataformatInput.data("format");
+				var options = {
+					onShow: function () {
+						var timepicker = $(this);
+						setTimeout(function () {
+							timepicker.addClass('active');
+						}, 15); //for smooth animation
+					},
+					onClose: function () {
+						var timepicker = this;
+						timepicker.removeClass('active');
+						var transitionDuration = parseFloat(getComputedStyle(timepicker[0]).transitionDuration.replace("s", "")) * 1000; //transform like 0.2s to 200
+						setTimeout(function () {
+							timepicker.hide();
+						}, transitionDuration + 15);
+						return false;
+					},
+					lang: culture
 				}
-				else if (format == "date") {
-					$this.datetimepicker({
-						timepicker: false,
-						scrollInput: false,
-						scrollMonth: false,
-						format: "d.m.Y",
-						lang: culture
-					});
-				}
-				else if (format == "time") {
-					$this.datetimepicker({
-						datepicker: false,
-						scrollInput: false,
-						format: "H:i",
-						lang: culture
-					});
+				switch (format) {
+					case "datetime":
+						var datetimeOptions = {
+							scrollInput: false,
+							scrollMonth: false,
+							format: "d.m.Y H:i",
+							className: "datetime"
+						}
+						$.extend(datetimeOptions, options);
+						$dataformatInput.datetimepicker(datetimeOptions);
+						break;
+					case "date":
+						var dateOptions = {
+							timepicker: false,
+							scrollInput: false,
+							scrollMonth: false,
+							format: "d.m.Y",
+							className: "date"
+						};
+						$.extend(dateOptions, options);
+						$dataformatInput.datetimepicker(dateOptions);
+						break;
+					case "time":
+						var timeOptions = {
+							datepicker: false,
+							scrollInput: false,
+							format: "H:i",
+							className: "time"
+						};
+						$.extend(timeOptions, options);
+						$dataformatInput.datetimepicker(timeOptions);
+						break;
 				}
 			});
 		}
