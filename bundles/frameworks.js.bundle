@@ -1,2 +1,3 @@
 ../../jquery/**/*.js
 ../js/jquery.dragsort-0.5.2.js
+../js/mf.startup.js
