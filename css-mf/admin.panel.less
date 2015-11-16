@@ -11,7 +11,10 @@
 	margin: 0;
 	padding-bottom: @admin-top-panel-visible;
 	z-index: 999998;
-	.transition(top 0.5s ease-in-out);
+
+	html:not(.initial-pin) & {
+		.transition(top 0.5s ease-in-out);
+	}
 
 	&:hover {
 		top: 0;
@@ -28,9 +31,10 @@
 			max-width: @width-lg;
 			padding: 0 1em;
 		}
-		> button{
+
+		> button {
 			.pull-middle;
-			float:right;
+			float: right;
 			margin-right: 1rem;
 			width: 36px;
 			padding: 7px 10px;
@@ -85,6 +89,6 @@ html.mf-admin-pinned {
 	}
 }
 
-body {
+html:not(.initial-pin) body {
 	.transition(margin-top 0.5s ease-in-out);
 }
