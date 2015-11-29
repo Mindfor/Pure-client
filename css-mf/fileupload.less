@@ -7,12 +7,20 @@
 }
 
 .mf-file-upload {
+	position: relative;
 	@size: 150px;
-
-	input[type="file"] {
-		width: 300px;
-		display: block;
-		clear: both;
+	@zindex-buttons: 200;
+	@zindex-progress: 100;
+	//this create area for drag and drop
+	input[type=file] {
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		cursor: default;
+		visibility: hidden;
+		right: 0;
+		top: 0;
 	}
 
 	ul {
@@ -20,26 +28,25 @@
 		.blocks(4, @width-sm, 1em);
 		.blocks(5, @width-lg, 1em);
 		.blocks(6, @width-xl, 1em);
+		margin: 0;
 
 		li {
 			button {
-				padding: @control-padding-v !important;
+				padding: 0 !important;
 				margin: 1px;
 				line-height: 1;
 			}
 		}
 	}
 
-	.template {
+	.list-item-template {
 		display: none !important;
 	}
-
-	.item,
-	.upload,
-	.empty {
+	//view tiles
+	> ul > li {
 		position: relative;
-		min-width: @size;
-		min-height: @size;
+		width: @size;
+		height: @size;
 		line-height: @size - 2px;
 		text-align: center;
 		overflow: hidden;
@@ -54,37 +61,53 @@
 			vertical-align: middle;
 		}
 
-		.progress {
-			.buttons {
-				&:hover {
-					opacity: 0 !important;
-				}
+		> a > i {
+			font-size: 28px;
+		}
+	}
+
+	.buttons {
+		.transition(@transition-default);
+		position: absolute;
+		top: 0;
+		opacity: 0;
+		display: none;
+		height: 100%;
+		width: 100%;
+		background-color: fade(black, 40%);
+		z-index: @zindex-buttons;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		button {
+			.transition(@transition-default);
+			width: 32px;
+			height: 32px;
+			border: @control-border-width solid transparent;
+			border-radius: @control-border-radius;
+			color: @color-invert;
+
+			> i {
+				.transition(@transition-default);
+				color: @color-invert;
+			}
+
+			&:hover {
+				border-color: white;
 			}
 		}
 
-		.buttons {
-			position: absolute;
-			top: 0;
-			opacity: 0;
-			display: none;
-			height: 100%;
-			width: 100%;
-			background-color: fade(black, 40%);
-			.transition(opacity @transition-duration);
+		.mf-toolbar-right button {
+			width: 28px;
+			height: 28px;
 
 			&:hover {
-				opacity: 1;
-			}
-
-			button {
-				color: white;
+				border-color: transparent;
 
 				> i {
-					color: white;
-				}
-
-				&:hover {
-					border-color: white;
+					.scale(1.4);
 				}
 			}
 		}
@@ -98,36 +121,44 @@
 		}
 	}
 
-	// TODO: styles for .view-list
-	// .file-item {
-	// 	&:extend(input[type="text"] all);
-	// 	padding: @control-padding-v 2em;
-	// 	min-width: 250px;
-	// 	overflow: hidden;
-	// 	text-overflow: ellipsis;
+	.progress {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		z-index: @zindex-progress;
 
-	// 	> button {
-	// 		position: absolute;
-	// 		.pull-middle();
-	// 	}
+		.progress-bar {
+			@progressAnimation: progressGlowing 1.5s infinite alternate;
+			@progressTransition: width @transition-duration @transition-function;
+			.animation(@progressAnimation);
+			.transition(@progressTransition);
+			position: absolute;
+			top: 0;
+			width: 0%;
+			height: 100%;
+		}
 
-	// 	.sort {
-	// 		left: 0;
-	// 	}
+		.text {
+			position: absolute;
+			z-index: 1;
+			right: 0;
+			left: 0;
+		}
 
-	// 	.delete {
-	// 		right: 0;
-	// 	}
+		& + .buttons .btn-upload {
+			display: none;
+		}
+	}
 
-	// 	&.drag-placeholder, &[data-origstyle] {
-	// 		box-sizing: content-box;
-	// 	}
-	// }
-
-	.upload {
-		border-color: transparent;
-		.transition(border @transition-duration ease-in-out);
+	.btn-big-upload {
+		.transition(@transition-default);
+		cursor: pointer;
 		position: relative;
+
+		&:not(:first-child) {
+			border-color: transparent;
+		}
 
 		&:hover {
 			border-color: @color-secondary;
@@ -137,23 +168,25 @@
 			}
 		}
 
-		> input {
-			opacity: 0;
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			right: 0;
-			top: 0;
-		}
-
 		> i {
+			.transition(@transition-default);
 			.pull-middle();
 			position: absolute;
-			font-size: 4em;
 			right: 0;
 			left: 0;
+			font-size: 4em;
 			color: @color-border;
-			.transition(color @transition-duration ease-in-out);
 		}
+	}
+}
+
+
+@keyframes progressGlowing {
+	from {
+		background: fade(@color-secondary, 40%);
+	}
+
+	to {
+		background: fade(@color-secondary, 70%);
 	}
 }
