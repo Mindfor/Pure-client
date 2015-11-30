@@ -9,8 +9,11 @@
 .mf-file-upload {
 	position: relative;
 	@size: 150px;
-	@zindex-buttons: 200;
 	@zindex-progress: 100;
+	@zindex-buttons: 200;
+	position: relative;
+	margin-bottom: -1em;
+
 	//this create area for drag and drop
 	input[type=file] {
 		opacity: 0;
@@ -31,10 +34,10 @@
 		margin: 0;
 
 		li {
+			.btn,
 			button {
 				padding: 0 !important;
 				margin: 1px;
-				line-height: 1;
 			}
 		}
 	}
@@ -61,8 +64,20 @@
 			vertical-align: middle;
 		}
 
-		> a > i {
+		> .icon,
+		> a > .icon {
 			font-size: 28px;
+		}
+
+		> .icon {
+			position:relative;
+            color: @color-primary;
+			top: 5px;
+		}
+
+		> a,
+		> .icon{
+			.transition(@transition-default);
 		}
 	}
 
@@ -81,12 +96,16 @@
 			opacity: 1;
 		}
 
+		.btn,
 		button {
 			.transition(@transition-default);
-			width: 32px;
-			height: 32px;
+			@main-btn-size: 32px;
+			width: @main-btn-size;
+			height: @main-btn-size;
+			line-height: @main-btn-size - @control-border-width*2;
 			border: @control-border-width solid transparent;
 			border-radius: @control-border-radius;
+			background: transparent;
 			color: @color-invert;
 
 			> i {
@@ -95,19 +114,31 @@
 			}
 
 			&:hover {
-				border-color: white;
+				border-color: @color-invert;
+				background: transparent;
+			}
+
+			.active,
+			&:active,
+			&:focus {
+				box-shadow: none !important;
 			}
 		}
 
-		.mf-toolbar-right button {
-			width: 28px;
-			height: 28px;
+		.mf-toolbar-right {
+			.btn,
+			button {
+				@toolbar-btn-size: 28px;
+				width: @toolbar-btn-size;
+				height: @toolbar-btn-size;
+				line-height: @toolbar-btn-size - @control-border-width*2;
 
-			&:hover {
-				border-color: transparent;
+				&:hover {
+					border-color: transparent;
 
-				> i {
-					.scale(1.4);
+					> i {
+						.scale(1.4);
+					}
 				}
 			}
 		}
@@ -146,8 +177,16 @@
 			left: 0;
 		}
 
-		& + .buttons .btn-upload {
-			display: none;
+		& ~ .buttons{
+			> .btn,
+			> button{
+				display: none;
+			}
+		}
+        
+		& ~ a,
+		& ~ .icon{
+			opacity: 0;
 		}
 	}
 
@@ -174,12 +213,21 @@
 			position: absolute;
 			right: 0;
 			left: 0;
-			font-size: 4em;
+			font-size: 56px;
 			color: @color-border;
 		}
 	}
 }
 
+@-webkit-keyframes progressGlowing {
+	from {
+		background: fade(@color-secondary, 40%);
+	}
+
+	to {
+		background: fade(@color-secondary, 70%);
+	}
+}
 
 @keyframes progressGlowing {
 	from {
