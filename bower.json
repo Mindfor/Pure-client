@@ -6,10 +6,10 @@
 	"homepage": "https://github.com/Mindfor/Pure-client",
 
 	"main": [
-		"pure.less",
+		"*.less",
 		"bundles/*",
 		"css-mf/*",
-		"css-pages/*",
+		"css-admin/*",
 		"js/*"
 	],
 
