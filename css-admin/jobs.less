@@ -1,15 +1,35 @@
-.job-running {
+.job-status-unknown {
+	background-color: @color-gray; 
+}
+
+.job-status-disabled {
+	background-color: @color-error; 
+}
+
+.job-status-queued {
 	background-color: @color-secondary; 
 }
 
-.job-completed {
-	background-color: @color-success; 
+.job-status-running {
+	background-color: @color-primary; 
 }
 
-.job-canceled {
+.job-status-waiting {
 	background-color: @color-warning; 
 }
 
-.job-error {
+.job-result-running {
+	background-color: @color-primary; 
+}
+
+.job-result-completed {
+	background-color: @color-success; 
+}
+
+.job-result-canceled {
+	background-color: @color-warning; 
+}
+
+.job-result-error {
 	background-color: @color-error; 
 }
