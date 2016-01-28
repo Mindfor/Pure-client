@@ -7,7 +7,8 @@
 ../../jquery-validation-globalize/**/*.js
 ../../magnific-popup/**/*.js
 ../../retina.js/**/*.js
-../../select2/**/*.js
+../../select2/dist/js/select2.js
+../../select2/dist/js/i18n/ru.js
 ../js/mf.globalize.js
 ../js/mf.pure.js
 ../js/mf.forms.js
