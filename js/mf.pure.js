@@ -6,21 +6,12 @@ window.mf = window.mf || {};
 	// configure defaults and look for "data" attributes
 	$(function () {
 		// block ui
-		if ($.blockUI && $.blockUI.defaults) {
+		if ($.blockUI && $.blockUI.defaults)
 			$.blockUI.defaults.message = "Загрузка...";
-		}
-		
+
 		// set timezone
 		var tzMinutes = new Date().getTimezoneOffset();
 		document.cookie = "TimeZone=" + (-tzMinutes / 60);
-
-		// globalize - set culture
-		var culture = $("html").attr("lang");
-		if (culture === undefined)
-			culture = "en";
-
-		if (window.Globalize)
-			Globalize.culture(culture);
 
 		// enable fancy box
 		if ($.fn.fancybox) {
@@ -59,13 +50,11 @@ window.mf = window.mf || {};
 					onClose: function () {
 						var timepicker = this;
 						timepicker.removeClass('active');
-						var transitionDuration = parseFloat(getComputedStyle(timepicker[0]).transitionDuration.replace("s", "")) * 1000; //transform like 0.2s to 200
-						setTimeout(function () {
-							timepicker.hide();
-						}, transitionDuration + 15);
+						var transitionDuration = parseFloat(getComputedStyle(timepicker[0]).transitionDuration) * 1000; //transform like 0.2s to 200
+						setTimeout(timepicker.hide, transitionDuration + 15);
 						return false;
 					},
-					lang: culture
+					lang: mf.culture
 				}
 				switch (format) {
 					case "datetime":
@@ -130,31 +119,31 @@ window.mf = window.mf || {};
 		var hoverClass = "mf-hover";
 		var tbodyClass = "mf-table-tbody";
 		$("body")
-			.on("mouseenter", "table tr", function () {
-				var $tr = $(this);
-				$tr.addClass(hoverClass);
-				if ($tr.closest("table").hasClass(tbodyClass))
-					$tr.closest("tbody").addClass(hoverClass);
-			})
-			.on("mouseleave", "table tr", function () {
-				$(this).removeClass(hoverClass)
-					.closest("tbody").removeClass(hoverClass);
-			})
-			.on("mouseenter", "table a, input, select, button", function () {
-				$tr = $(this).closest("tr");
-				if ($tr.hasClass(hoverClass)) {
-					$tr.data(hoverClass, true).removeClass(hoverClass)
-						.closest("tbody").removeClass(hoverClass);
-				}
-			})
-			.on("mouseleave", "table a, input, select, button", function () {
-				$tr = $(this).closest("tr");
-				if ($tr.data(hoverClass)) {
-					$tr.data(hoverClass, false).addClass(hoverClass);
-					if ($tr.closest("table").hasClass(tbodyClass))
-						$tr.closest("tbody").addClass(hoverClass);
-				}
-			});
+            .on("mouseenter", "table tr", function () {
+            	var $tr = $(this);
+            	$tr.addClass(hoverClass);
+            	if ($tr.closest("table").hasClass(tbodyClass))
+            		$tr.closest("tbody").addClass(hoverClass);
+            })
+            .on("mouseleave", "table tr", function () {
+            	$(this).removeClass(hoverClass)
+                    .closest("tbody").removeClass(hoverClass);
+            })
+            .on("mouseenter", "table a, input, select, button", function () {
+            	$tr = $(this).closest("tr");
+            	if ($tr.hasClass(hoverClass)) {
+            		$tr.data(hoverClass, true).removeClass(hoverClass)
+                        .closest("tbody").removeClass(hoverClass);
+            	}
+            })
+            .on("mouseleave", "table a, input, select, button", function () {
+            	$tr = $(this).closest("tr");
+            	if ($tr.data(hoverClass)) {
+            		$tr.data(hoverClass, false).addClass(hoverClass);
+            		if ($tr.closest("table").hasClass(tbodyClass))
+            			$tr.closest("tbody").addClass(hoverClass);
+            	}
+            });
 
 		// gallery
 		$('.mf-gallery a').magnificPopup({
@@ -181,6 +170,7 @@ window.mf = window.mf || {};
 
 		open: function (options) {
 			var options2 = $.extend(true, {}, $.popup.defaults, options);
+
 			function openInternal() {
 				$.magnificPopup.open(options2);
 			};
@@ -198,8 +188,8 @@ window.mf = window.mf || {};
 
 		inline: function (content, options) {
 			var $root = $("<section/>")
-					.addClass("mf-popup")
-					.append(content);
+                .addClass("mf-popup")
+                .append(content);
 			options = $.extend(true, {}, options, {
 				closeBtnInside: true,
 				items: {
@@ -259,11 +249,15 @@ window.mf = window.mf || {};
 
 	/* --- helper functions --- */
 	Number.prototype.toHtmlLocale = function (precision) {
-		this.toLocaleString(getHtmlLocale(), { maximumFractionDigits: precision });
+		this.toLocaleString(getHtmlLocale(), {
+			maximumFractionDigits: precision
+		});
 	};
 
 	Number.prototype.toMoney = function () {
-		return this.toLocaleString(getHtmlLocale(), { maximumFractionDigits: 2 });
+		return this.toLocaleString(getHtmlLocale(), {
+			maximumFractionDigits: 2
+		});
 	};
 
 	function getHtmlLocale() {
@@ -272,25 +266,62 @@ window.mf = window.mf || {};
 			return htmls[0].getAttribute("lang");
 		return null;
 	};
-    
-    $.fn.setActive = function () {
+
+	$.fn.setActive = function () {
 		this.siblings().removeClass("active");
 		this.addClass("active");
 	}
-    
-    /*
-	 * The method filters jquery objects by some name of data property in params prop, 
-	 * if val params is present then filtration happens by value of the data property 
-	 */
+
+	/*
+     * The method filters jquery objects by some name of data property in params prop,
+     * if val params is present then filtration happens by value of the data property
+     */
 	$.fn.filterByData = function (prop, val) {
 		return this.filter(function () {
-				var valOfData = $(this).data(prop);
-				if (val) 
-					return valOfData == val;
-				if (valOfData)
-					return true;
-				return false;
-			}
-		);
+			var valOfData = $(this).data(prop);
+			if (val)
+				return valOfData == val;
+			if (valOfData)
+				return true;
+			return false;
+		});
+	}
+
+
+	//TODO Check bug fix of Select2. What lies below is a hook of problem with wrong positioning of select2 dropdown 
+	var baseSelect2 = $.fn.select2;
+	$.fn.select2 = function (options) {
+		$(document).trigger("select2:attach", this);
+		baseSelect2.call(this, options);
+	};
+
+	$(document).on("select2:attach", attachPositionCorrection);
+
+	var $selectors = $(document.querySelectorAll("select"));
+	$selectors.each(attachPositionCorrection)
+
+	function attachPositionCorrection(e, element) {
+		var selector = element || this;
+		if (selector.isAttachedPositionCorrection)
+			return;
+
+		var $selector = $(selector);
+		var select2manager = $selector.data("select2");
+		if (!select2manager)
+			return;
+
+		selector.isAttachedPositionCorrection = true;
+		$selector.on("select2:open", positionManagerSelectorDropdown);
+		select2manager.on("results:all", positionManagerSelectorDropdown);
+		$(window).resize(positionManagerSelectorDropdown);
+		$(window).scroll(positionManagerSelectorDropdown);
+
+		function positionManagerSelectorDropdown() {
+			var rect = select2manager.$container[0].getBoundingClientRect();
+			requestAnimationFrame(function () {
+				select2manager.$dropdown.css("left", rect.left + "px");
+				select2manager.$dropdown.css("top", rect.bottom + window.scrollY + "px");
+			});
+		}
 	}
 })(jQuery);

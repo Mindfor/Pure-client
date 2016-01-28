@@ -1,0 +1,3 @@
+../../cldr-core/**/*.json
+../../cldr-numbers-modern/**/*.json
+../../cldr-dates-modern/**/*.json

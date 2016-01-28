@@ -28,3 +28,10 @@ mf.parseBool = function (value) {
 	}
 	return false;
 };
+
+$(function () {
+	//current culture
+	mf.culture = $("html").attr("lang");
+	if (mf.culture === undefined)
+		mf.culture = "en";
+});

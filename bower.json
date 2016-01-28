@@ -16,19 +16,71 @@
 	"dependencies": {
 		"fontawesome": "^4.3.0",
 		"fresh-css": "^0.5.32",
-		"jquery": "^2.1.3",
-		"jquery-validation": "^1.13.1",
-		"jquery-validation-unobtrusive": "^3.2.2",
-		"jquery.inputmask": "^3.1.49",
-		"jquery-dropdown": "^1.0.5",
-		"magnific-popup": "^1.0.0",
-		"datetimepicker": "^2.4.1",
-		"select2": "^4.0.0",
-		"retina.js": "^1.3.0",
-		"velocity": "^1.2.2",
-		"swiper": "^3.0.6"
+		"globalize": "1.1.0",
+		"cldr-core": "28.0.2",
+		"cldr-numbers-modern": "28.0.0",
+		"cldr-dates-modern": "28.0.0",
+		"jquery": "2.2.0",
+		"jquery-validation": "1.14.0",
+		"jquery-validation-unobtrusive": "3.2.5",
+		"jquery-validation-globalize": "1.0.0",
+		"jquery.inputmask": "3.2.6",
+		"jquery-dropdown": "2.0.2",
+		"magnific-popup": "1.0.1",
+		"datetimepicker": "2.4.5",
+		"select2": "4.0.2-rc.1",
+		"retina.js": "1.3.0",
+		"velocity": "1.2.3",
+		"swiper": "3.3.0"
 	},
-
+	"overrides": {
+		"select2": {
+			"main": [
+				"dist/css/select2.css",
+				"dist/js/select2.js",
+				"dist/js/i18n/ru.js"
+			]
+		},
+		"jquery-validation": {
+			"main": [
+				"dist/jquery.validate.js",
+				"src/localization/messages_ru.js"
+			]
+		},
+		"cldr-core": {
+			"main": [
+				"supplemental/likelySubtags.json",
+				"supplemental/numberingSystems.json",
+				"supplemental/timeData.json",
+				"supplemental/weekData.json"
+			]
+		},
+		"cldr-numbers-modern": {
+			"main": [
+				"main/ru/numbers.json"
+			]
+		},
+		"cldr-dates-modern": {
+			"main": [
+				"main/ru/ca-gregorian.json",
+				"main/ru/timeZoneNames.json"
+			]
+		},
+		"cldrjs": {
+			"main": [
+				"dist/cldr.js",
+				"dist/cldr/event.js",
+				"dist/cldr/supplemental.js"
+			]
+		},
+		"globalize": {
+			"main": [
+				"dist/globalize.js",
+				"dist/globalize/number.js",
+				"dist/globalize/date.js"
+			]
+		}
+	},
 	"resolutions": {
 		"jquery": ">=2.1.3"
 	}
