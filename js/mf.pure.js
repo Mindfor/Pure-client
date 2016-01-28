@@ -292,7 +292,7 @@ window.mf = window.mf || {};
 	var baseSelect2 = $.fn.select2;
 	$.fn.select2 = function (options) {
 		$(document).trigger("select2:attach", this);
-		baseSelect2.call(this, options);
+		return baseSelect2.call(this, options);
 	};
 
 	$(document).on("select2:attach", attachPositionCorrection);
