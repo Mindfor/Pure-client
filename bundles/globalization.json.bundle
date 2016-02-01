@@ -1,3 +1,7 @@
-../../cldr-core/**/*.json
-../../cldr-numbers-modern/**/*.json
-../../cldr-dates-modern/**/*.json
+@{bower}/cldr-core/supplemental/likelySubtags.json
+@{bower}/cldr-core/supplemental/numberingSystems.json
+@{bower}/cldr-core/supplemental/timeData.json
+@{bower}/cldr-core/supplemental/weekData.json
+@{bower}/cldr-numbers-modern/main/ru/numbers.json
+@{bower}/cldr-dates-modern/main/ru/ca-gregorian.json
+@{bower}/cldr-dates-modern/main/ru/timeZoneNames.json
