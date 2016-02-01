@@ -39,19 +39,20 @@ window.mf = window.mf || {};
 		if ($.fn.datetimepicker) {
 			$("input[data-format]").each(function () {
 				var $dataformatInput = $(this);
+                $dataformatInput.attr("type", "text"); //for preventing users set "type=datetime"
 				var format = $dataformatInput.data("format");
 				var options = {
 					onShow: function () {
-						var timepicker = $(this);
+						var picker = $(this);
 						setTimeout(function () {
-							timepicker.addClass('active');
+							picker.addClass('active');
 						}, 15); //for smooth animation
 					},
 					onClose: function () {
-						var timepicker = this;
-						timepicker.removeClass('active');
-						var transitionDuration = parseFloat(getComputedStyle(timepicker[0]).transitionDuration) * 1000; //transform like 0.2s to 200
-						setTimeout(timepicker.hide, transitionDuration + 15);
+						var picker = this;
+						picker.removeClass('active');
+						var transitionDuration = parseFloat(getComputedStyle(picker[0]).transitionDuration) * 1000; //transform like 0.2s to 200
+						setTimeout(picker.hide.bind(picker), transitionDuration + 15);
 						return false;
 					},
 					lang: mf.culture
