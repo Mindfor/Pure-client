@@ -1,6 +1,6 @@
 @{bower}/datetimepicker/jquery.datetimepicker.js
-@{bower}/jquery.inputmask/**/jquery.inputmask.js
-@{bower}/jquery.inputmask/**/jquery.inputmask.*.js
+@{bower}/jquery.inputmask/dist/inputmask/inputmask.js
+@{bower}/jquery.inputmask/dist/inputmask/jquery.inputmask.js
 ../js/mf.fileupload.js
 ../js/mf.nestable.js
 ../js/mf.admin.js

@@ -1,4 +1,4 @@
-@{bower}/jquery-validation/dist/*.js
+@{bower}/jquery-validation/dist/jquery.validate.js
 @{bower}/jquery-validation/src/localization/messages_ru.js
 @{bower}/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js
 @{bower}/cldrjs/dist/cldr.js
@@ -6,8 +6,8 @@
 @{bower}/globalize/dist/globalize.js
 @{bower}/globalize/dist/globalize/*.js
 @{bower}/jquery-validation-globalize/jquery.validate.globalize.js
-@{bower}/magnific-popup/dist/*.js
-@{bower}/retina.js/dist/*.js
+@{bower}/magnific-popup/dist/jquery.magnific-popup.js
+@{bower}/retina.js/dist/retina.js
 @{bower}/select2/dist/js/select2.js
 @{bower}/select2/dist/js/i18n/ru.js
 @{bower}/underscore/underscore.js
