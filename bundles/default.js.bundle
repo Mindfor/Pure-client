@@ -10,6 +10,9 @@
 @{bower}/retina.js/dist/*.js
 @{bower}/select2/dist/js/select2.js
 @{bower}/select2/dist/js/i18n/ru.js
+@{bower}/underscore/underscore.js
+@{bower}/velocity/velocity.js
+@{bower}/velocity/velocity.ui.js
 ../js/mf.globalization.js
 ../js/mf.pure.js
 ../js/mf.forms.js
