@@ -78,12 +78,8 @@ window.mf = window.mf || {};
 			$(this).data("admin-panel", panel);
 		});
 
-		// focus to the first field on load
-		var $formMain = $("form.mf-form-focus:eq(0)");
-		if (!$formMain.length)
-			$formMain = $("form:eq(0)");
-		var $formMainInput = $formMain.find("input[type!=hidden]").eq(0);
-		$formMainInput.focus();
+		// focus to the first input control tagged by focus-first class of the first form on page
+		$("form:eq(0) input.focus-first:eq(0)").focus();
 	});
 
 	// mf admin panel
