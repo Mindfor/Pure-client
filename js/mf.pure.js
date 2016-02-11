@@ -292,8 +292,9 @@ window.mf = window.mf || {};
 	//TODO Check bug fix of Select2. What lies below is a hook of problem with wrong positioning of select2 dropdown 
 	var baseSelect2 = $.fn.select2;
 	$.fn.select2 = function (options) {
+        var select2 = baseSelect2.call(this, options);
 		$(document).trigger("select2:attach", this);
-		return baseSelect2.call(this, options);
+		return select2;
 	};
 
 	$(document).on("select2:attach", attachPositionCorrection);
