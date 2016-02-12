@@ -292,27 +292,25 @@ window.mf = window.mf || {};
 	//TODO Check bug fix of Select2. What lies below is a hook of problem with wrong positioning of select2 dropdown 
 	var baseSelect2 = $.fn.select2;
 	$.fn.select2 = function (options) {
-        var select2 = baseSelect2.call(this, options);
-		$(document).trigger("select2:attach", this);
-		return select2;
+        var $this = baseSelect2.call(this, options);
+		$(document).trigger("pure:select2:change", this);
+		return $this;
 	};
 
-	$(document).on("select2:attach", attachPositionCorrection);
+	$(document).on("pure:select2:change", attachPositionCorrection);
 
 	var $selectors = $(document.querySelectorAll("select"));
 	$selectors.each(attachPositionCorrection)
 
 	function attachPositionCorrection(e, element) {
 		var selector = element || this;
-		if (selector.isAttachedPositionCorrection)
+        var $selector = $(selector);
+        var select2manager = $selector.data("select2");
+        
+        if (!select2manager || select2manager.isAttachedPositionCorrection)
 			return;
 
-		var $selector = $(selector);
-		var select2manager = $selector.data("select2");
-		if (!select2manager)
-			return;
-
-		selector.isAttachedPositionCorrection = true;
+		select2manager.isAttachedPositionCorrection = true;
 		$selector.on("select2:open", positionManagerSelectorDropdown);
 		select2manager.on("results:all", positionManagerSelectorDropdown);
 		$(window).resize(positionManagerSelectorDropdown);
