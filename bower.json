@@ -14,8 +14,8 @@
 	],
 
 	"dependencies": {
-			"fontawesome": "4.3.0",
-		"fresh-css": "0.5.32",
+		"fontawesome": "4.3.0",
+		"fresh-css": "0.5.36",
 		"globalize": "~1.1.0",
 		"cldr-core": "~28.0.2",
 		"cldr-numbers-modern": "~28.0.0",
