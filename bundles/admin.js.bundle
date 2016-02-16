@@ -1,4 +1,4 @@
-@{bower}/datetimepicker/jquery.datetimepicker.js
+@{bower}/datetimepicker/build/jquery.datetimepicker.full.js
 @{bower}/jquery.inputmask/dist/inputmask/inputmask.js
 @{bower}/jquery.inputmask/dist/inputmask/jquery.inputmask.js
 ../js/mf.fileupload.js
