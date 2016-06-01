@@ -1,6 +1,6 @@
 {
 	"name": "mindfor-pure",
-	"version": "0.0.0",
+	"version": "0.3.56",
 	"devDependencies": {
 		"gulp": "^3.8.11",
 		"gulp-less": "^3.0.3",

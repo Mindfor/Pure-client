@@ -8,7 +8,7 @@
 @{bower}/jquery-validation-globalize/jquery.validate.globalize.js
 @{bower}/magnific-popup/dist/jquery.magnific-popup.js
 @{bower}/retina.js/dist/retina.js
-@{bower}/select2/dist/js/select2.js
+@{bower}/select2/dist/js/select2.full.js
 @{bower}/select2/dist/js/i18n/ru.js
 @{bower}/underscore/underscore.js
 @{bower}/velocity/velocity.js
