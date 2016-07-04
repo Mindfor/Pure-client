@@ -7,7 +7,7 @@
 		.transition(all 0.2s ease-in-out);
 
 		&.mfp-ready {
-			opacity: 0.7;
+			opacity: .7;
 		}
 
 		&.mfp-removing {
@@ -33,15 +33,16 @@
 
 /* Opacity animation */
 .mfp-with-zoom {
-	.mfp-container, &.mfp-bg {
+	 &.mfp-bg,
+	.mfp-container {
 		opacity: 0;
 		-webkit-backface-visibility: hidden;
 		-moz-backface-visibility: hidden;
 		backface-visibility: hidden;
-		-webkit-transition: all 0.3s ease-out;
-		-moz-transition: all 0.3s ease-out;
-		-o-transition: all 0.3s ease-out;
-		transition: all 0.3s ease-out;
+		-webkit-transition: all .3s ease-out;
+		-moz-transition: all .3s ease-out;
+		-o-transition: all .3s ease-out;
+		transition: all .3s ease-out;
 	}
 
 	&.mfp-ready {
@@ -50,12 +51,13 @@
 		}
 
 		&.mfp-bg {
-			opacity: 0.8;
+			opacity: .8;
 		}
 	}
 
 	&.mfp-removing {
-		.mfp-container, &.mfp-bg {
+		 &.mfp-bg,
+		.mfp-container {
 			opacity: 0;
 		}
 	}
@@ -79,12 +81,17 @@
 	padding: 2em;
 	background-color: white;
 	border-color: @color-border;
-    border-radius: @control-border-radius;
+	border-radius: @control-border-radius;
+}
+
+.mfp-close > i {
+	pointer-events: none; // fixes chrome bug - click events on i doesnt bubble up to mfp-close - which disable close behaviour
 }
 
 // popup with no margins
 .mf-popup-no-margins {
-	.mfp-container, img.mfp-img {
+	.mfp-container,
+	img.mfp-img {
 		padding: 0;
 	}
 	/* position of shadow behind the image */
@@ -101,7 +108,7 @@
 		right: 0;
 		top: 0;
 		text-decoration: none;
-		opacity: 0.65;
+		opacity: .65;
 		filter: alpha(opacity=65);
 		padding: 0 0 18px 10px;
 		color: transparent;
@@ -114,12 +121,14 @@
 		padding-right: 6px;
 		width: 100%;
 
-		&:hover, &:focus {
+		&:focus,
+		&:hover {
 			background-color: transparent !important;
 			box-shadow: none !important;
 		}
 	}
 }
-.mfp-preloader{
-    .transform(translateY(-50%));
+
+.mfp-preloader {
+	.transform(translateY(-50%));
 }
